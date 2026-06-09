@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sake — Game Hosting</title>
+    <title>Sake — Premium Game Environments</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,14 +14,17 @@
             letter-spacing: -0.022em;
             -webkit-font-smoothing: antialiased;
         }
+        /* Custom clean removal of the default ugly browser arrow on details */
+        details summary::-webkit-details-marker { display: none; }
+        details summary { list-style: none; }
     </style>
 </head>
 <body class="min-h-screen bg-[#000000] text-[#f5f5f7] flex flex-col justify-between relative selection:bg-neutral-800">
 
     <nav class="w-full bg-[#161617]/40 backdrop-blur-md border-b border-white/[0.04] sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-6 h-12 flex items-center justify-between text-[12px] font-normal tracking-wide text-neutral-400">
-            <div class="font-semibold text-white tracking-tight flex items-center gap-1.5">
-                <span>sake</span><span class="text-neutral-500 font-light">.host</span>
+            <div class="font-semibold text-white tracking-[-0.03em] text-[15px] flex items-baseline select-none">
+                <span>sake</span><span class="text-neutral-500 font-normal">.host</span>
             </div>
             <div class="flex items-center gap-6">
                 <span class="text-[11px] font-mono tracking-widest text-neutral-600 uppercase bg-neutral-900 px-2 py-0.5 rounded border border-white/[0.02]">Pre-Launch</span>
@@ -46,6 +49,34 @@
             <p class="text-neutral-400 text-lg sm:text-xl font-normal leading-relaxed max-w-xl">
                 We're engineering a remarkably quiet, incredibly fast hosting network from the ground up. Hope to see you back soon.
             </p>
+
+            <div class="max-w-xl pt-2">
+                <details class="group border-y border-white/[0.06] py-4 transition-all duration-300">
+                    <summary class="flex justify-between items-center font-medium text-sm text-neutral-400 hover:text-white cursor-pointer select-none">
+                        <span>View network architecture & hardware specs</span>
+                        <span class="text-neutral-600 group-open:rotate-180 transition-transform duration-200 text-xs">▼</span>
+                    </summary>
+                    
+                    <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-6 text-xs text-neutral-400 pt-2 animate-fadeIn">
+                        <div class="space-y-1">
+                            <h4 class="text-white font-medium text-[13px]">Oceania Backbone</h4>
+                            <p class="text-neutral-500 leading-relaxed">Native, low-latency node routing deployed across Melbourne, Sydney, and Auckland.</p>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-white font-medium text-[13px]">Compute Layer</h4>
+                            <p class="text-neutral-500 leading-relaxed">Powered exclusively by high-frequency AMD Ryzen 9 architecture running NVMe storage matrixes.</p>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-white font-medium text-[13px]">Mitigation Engine</h4>
+                            <p class="text-neutral-500 leading-relaxed">Continuous, game-aware DDoS filtering shielding your community instances from unexpected downtime.</p>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-white font-medium text-[13px]">SLA Guarantee</h4>
+                            <p class="text-neutral-500 leading-relaxed">Enterprise tier hardware redundancies paired with transparent, real-time node monitoring.</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
 
             <div class="pt-4 flex flex-col sm:flex-row sm:items-center gap-4">
                 <a 
@@ -73,7 +104,7 @@
                 <span>All rights reserved.</span>
             </div>
             <div class="font-mono tracking-wider text-neutral-700 uppercase text-[10px]">
-                Engineered in secret
+                Engineered in Australia
             </div>
         </div>
     </footer>
