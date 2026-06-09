@@ -11,13 +11,23 @@
     <style>
         body { 
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
-            letter-spacing: -0.022em;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             scroll-behavior: smooth;
         }
         /* Custom clean removal of the default browser arrow on details */
         details summary::-webkit-details-marker { display: none; }
         details summary { list-style: none; }
+
+        /* Apple Fine-Tuning Typography adjustments */
+        h1, h2, h3 {
+            letter-spacing: -0.03em;
+            font-weight: 600;
+        }
+        p, span, a, li {
+            letter-spacing: -0.011em;
+            line-height: 1.55;
+        }
     </style>
 </head>
 <body class="min-h-screen bg-[#000000] text-[#f5f5f7] flex flex-col justify-between relative selection:bg-neutral-800">
@@ -43,13 +53,13 @@
                     Sake Infrastructure
                 </p>
 
-                <h1 class="text-4xl sm:text-6xl md:text-7xl font-semibold tracking-[-0.03em] leading-[1.05] text-white">
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-semibold tracking-[-0.035em] leading-[1.03] text-white">
                     The next biggest <br />
                     game server hosting. <br />
                     <span class="text-neutral-600 bg-gradient-to-r from-neutral-500 to-neutral-700 bg-clip-text text-transparent">Built for absolute scale.</span>
                 </h1>
                 
-                <p class="text-neutral-400 text-base sm:text-lg font-normal leading-relaxed max-w-xl">
+                <p class="text-neutral-400 text-base sm:text-lg font-normal max-w-xl">
                     We're engineering a remarkably quiet, incredibly fast hosting network from the ground up. Hope to see you back soon.
                 </p>
 
