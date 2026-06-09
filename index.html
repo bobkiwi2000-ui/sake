@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,13 +13,12 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            scroll-behavior: smooth;
+            overflow-x: hidden;
         }
-        /* Custom clean removal of the default browser arrow on details */
         details summary::-webkit-details-marker { display: none; }
         details summary { list-style: none; }
 
-        /* Apple Fine-Tuning Typography adjustments */
+        /* Premium Fine-Tuned Typography System */
         h1, h2, h3 {
             letter-spacing: -0.03em;
             font-weight: 600;
@@ -44,22 +43,22 @@
         </div>
     </nav>
 
-    <div class="w-full max-w-5xl mx-auto px-6 flex-1 flex flex-col justify-center space-y-16 py-12 sm:py-20 z-10">
+    <div class="w-full max-w-5xl mx-auto px-6 flex-1 flex flex-col justify-center space-y-16 py-12 md:py-24 z-10 box-border">
         
-        <main class="w-full flex flex-col md:flex-row md:items-center md:justify-between gap-12 text-left">
+        <main class="w-full flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-12 text-left">
             
-            <div class="max-w-2xl space-y-6">
-                <p class="text-[14px] sm:text-[16px] font-medium text-neutral-400 tracking-tight">
+            <div class="max-w-2xl space-y-5 sm:space-y-6">
+                <p class="text-[13px] sm:text-[14px] font-medium text-neutral-400 tracking-tight">
                     Sake Infrastructure
                 </p>
 
-                <h1 class="text-4xl sm:text-6xl md:text-7xl font-semibold tracking-[-0.035em] leading-[1.03] text-white">
-                    The next biggest <br />
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] leading-[1.08] sm:leading-[1.03] text-white break-words">
+                    The next biggest <br class="hidden sm:inline" />
                     game server hosting. <br />
                     <span class="text-neutral-600 bg-gradient-to-r from-neutral-500 to-neutral-700 bg-clip-text text-transparent">Built for absolute scale.</span>
                 </h1>
                 
-                <p class="text-neutral-400 text-base sm:text-lg font-normal max-w-xl">
+                <p class="text-neutral-400 text-sm sm:text-base md:text-lg font-normal max-w-xl leading-relaxed">
                     We're engineering a remarkably quiet, incredibly fast hosting network from the ground up. Hope to see you back soon.
                 </p>
 
@@ -92,16 +91,16 @@
                 </div>
             </div>
 
-            <div class="flex flex-col items-start md:items-end justify-center gap-3 shrink-0 pt-4 md:pt-0 md:text-right">
+            <div class="flex flex-col items-start lg:items-end justify-center gap-3 shrink-0 pt-4 lg:pt-0 lg:text-right">
                 <a 
                     href="https://discord.gg/Nr4NWMqtDb" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center px-5 py-2.5 bg-[#0071e3] hover:bg-[#147ce5] text-white text-[14px] font-normal rounded-full transition-all duration-200"
+                    class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 bg-[#0071e3] hover:bg-[#147ce5] text-white text-[14px] font-medium rounded-full transition-all duration-200 shadow-md select-none"
                 >
                     Claim Founders Rank
                 </a>
-                <span class="text-xs text-neutral-500 font-normal max-w-[200px] leading-normal">
+                <span class="text-[12px] text-neutral-500 font-normal max-w-xs sm:max-w-[200px] leading-normal">
                     Join the Discord to secure early customer benefits.
                 </span>
             </div>
@@ -183,19 +182,19 @@
 
             </div>
 
-            <div class="flex items-center gap-2 text-[11px] text-neutral-600 max-w-xl font-normal select-none pt-2">
-                <span>⚠️</span>
-                <p>Metrics, architecture allocations, and framework target pricing subject to variance prior to public launch operations.</p>
+            <div class="flex items-start gap-2.5 text-[11px] text-neutral-600 max-w-xl font-normal select-none pt-2">
+                <span class="shrink-0">⚠️</span>
+                <p class="leading-normal">Metrics, architecture allocations, and framework target pricing subject to variance prior to public launch operations.</p>
             </div>
         </section>
 
     </div>
 
-    <footer class="w-full bg-[#161617]/30 border-t border-white/[0.02] py-8 z-10 mt-auto">
+    <footer class="w-full bg-[#161617]/30 border-t border-white/[0.02] py-8 z-10 mt-auto box-border">
         <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] font-normal text-neutral-600">
             <div class="flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-1">
                 <span>Copyright © 2026 Sake Digital.</span>
-                <span class="text-neutral-800">|</span>
+                <span class="text-neutral-800 hidden sm:inline">|</span>
                 <span>All rights reserved.</span>
                 <span class="text-neutral-800">|</span>
                 <a href="/terms.html" class="hover:text-neutral-400 transition-colors">Terms of Service</a>
