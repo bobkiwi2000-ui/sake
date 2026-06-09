@@ -1,91 +1,245 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Terms of Service — Sake</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        body { 
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
-            letter-spacing: -0.022em;
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
+        h1, h2, h3 { letter-spacing: -0.03em; }
+        p, span, a, li { letter-spacing: -0.011em; line-height: 1.65; }
+
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px; left: 0; right: 0;
+            height: 1px;
+            background: currentColor;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.2s ease;
+        }
+        .nav-link:hover::after { transform: scaleX(1); }
+
+        .divider-gradient {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.07) 30%, rgba(255,255,255,0.07) 70%, transparent);
+            margin: 0;
+        }
+
+        /* Sidebar sticky TOC */
+        .toc-link {
+            display: block;
+            font-size: 12px;
+            color: #737373;
+            padding: 3px 0 3px 10px;
+            border-left: 1px solid transparent;
+            transition: color 0.15s ease, border-color 0.15s ease;
+            text-decoration: none;
+            line-height: 1.5;
+        }
+        .toc-link:hover {
+            color: #d4d4d4;
+            border-left-color: #404040;
+        }
+        .toc-link.active {
+            color: #f5f5f7;
+            border-left-color: #0071e3;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .fade-up { animation: fadeUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) both; }
+        .delay-1 { animation-delay: 0.05s; }
+        .delay-2 { animation-delay: 0.12s; }
+        @media (prefers-reduced-motion: reduce) { .fade-up { animation: none; } }
     </style>
 </head>
-<body class="min-h-screen bg-[#000000] text-[#f5f5f7] flex flex-col justify-between relative selection:bg-neutral-800">
+<body class="min-h-screen w-full bg-[#0a0a0b] text-[#f5f5f7] flex flex-col justify-between overflow-x-hidden antialiased selection:bg-neutral-800">
 
-    <nav class="w-full bg-[#161617]/40 backdrop-blur-md border-b border-white/[0.04] sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto px-6 h-12 flex items-center justify-between text-[12px] font-normal tracking-wide text-neutral-400">
-            <a href="/" class="font-semibold text-white tracking-[-0.03em] text-[15px] flex items-baseline select-none hover:opacity-80 transition-opacity">
-                <span>sake</span><span class="text-neutral-500 font-normal">.host</span>
+    <!-- ── Navigation ── -->
+    <nav class="w-full bg-[#0a0a0b]/70 backdrop-blur-xl border-b border-white/[0.05] sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-12 flex items-center justify-between">
+            <a href="/" class="font-semibold text-white tracking-[-0.04em] text-[15px] flex items-baseline select-none hover:opacity-75 transition-opacity duration-200">
+                <span>sake</span><span class="text-neutral-600 font-light">.host</span>
             </a>
-            <div class="flex items-center gap-6">
-                <a href="/" class="hover:text-white transition-colors duration-200 font-medium text-[13px] tracking-tight">Back to Home</a>
-            </div>
+            <a href="/" class="nav-link text-[13px] font-medium tracking-tight text-neutral-400 hover:text-white transition-colors duration-200">
+                Back to Home
+            </a>
         </div>
     </nav>
 
-    <div class="w-full max-w-3xl mx-auto px-6 flex-1 py-16 sm:py-24 z-10 space-y-12">
-        
-        <header class="space-y-4 border-b border-white/[0.06] pb-8">
-            <p class="text-[14px] font-medium text-[#0071e3] tracking-tight uppercase tracking-wider font-mono">Legal Framework</p>
-            <h1 class="text-4xl font-semibold tracking-[-0.03em] text-white">Terms of Service</h1>
-            <p class="text-neutral-500 text-sm">Last updated: June 2026</p>
-        </header>
+    <!-- ── Page layout ── -->
+    <div class="w-full max-w-5xl mx-auto px-6 flex-1 py-14 sm:py-20 flex gap-16 items-start">
 
-        <main class="space-y-10 text-sm leading-relaxed text-neutral-400 font-normal">
-            
-            <section class="space-y-3">
-                <h2 class="text-lg font-medium text-white tracking-tight">1. Framework & Acceptance</h2>
-                <p>Welcome to Sake Digital ("Sake", "we", "us", or "our"). By accessing our domain (sake.host), joining our associated communications hubs (Discord), or provisioning infrastructure environments from us, you agree to comply with and be bound by these Terms of Service. If you do not accept these parameters, you must cease use of our services immediately.</p>
-            </section>
+        <!-- ── Sidebar TOC (desktop only) ── -->
+        <aside class="hidden lg:block w-48 shrink-0 sticky top-20">
+            <p class="text-[10px] font-mono tracking-widest uppercase text-neutral-600 mb-3">Contents</p>
+            <nav class="space-y-0.5" id="toc">
+                <a href="#s1" class="toc-link">1. Acceptance</a>
+                <a href="#s2" class="toc-link">2. Resource Use</a>
+                <a href="#s3" class="toc-link">3. Network & DDoS</a>
+                <a href="#s4" class="toc-link">4. Billing & Data</a>
+                <a href="#s5" class="toc-link">5. Disputes & Fraud</a>
+                <a href="#s6" class="toc-link">6. Prohibited Use</a>
+                <a href="#s7" class="toc-link">7. Liability</a>
+                <a href="#s8" class="toc-link">8. Modifications</a>
+                <a href="#s9" class="toc-link">9. Governing Law</a>
+            </nav>
+        </aside>
 
-            <section class="space-y-3">
-                <h2 class="text-lg font-medium text-white tracking-tight">2. Resource Allocations & Fair Use</h2>
-                <p>Sake provisions dedicated memory (RAM) and storage allocations based on your selected tier environment. However, compute environments are hosted on multi-tenant hardware layers. If a customer's specific instance utilizes an excessive, continuous amount of CPU, Disk I/O, or system throughput that negatively impacts the stability or performance of adjacent users on that node, Sake reserves the right to temporarily throttle, suspend, or limit resources on that instance until the underlying cause (e.g., poorly optimized modpacks, custom script loops) is safely resolved.</p>
-            </section>
+        <!-- ── Main content ── -->
+        <main class="flex-1 min-w-0 space-y-12">
 
-            <section class="space-y-3">
-                <h2 class="text-lg font-medium text-white tracking-tight">3. Network Operations & DDoS Mitigation</h2>
-                <p>We deploy advanced, game-aware network filtering matrices to protect host instances. However, because malicious digital entities continuously evolve, we cannot guarantee 100% uninterrupted network uptime during extreme or unprecedented malicious attacks. If an instance becomes the target of sustained network assaults that threaten to degrade our broader core routing infrastructure, we reserve the right to temporarily null-route or isolate that specific target instance to shield our global network footprint.</p>
-            </section>
+            <!-- Header -->
+            <header class="fade-up delay-1 space-y-4 pb-8 border-b border-white/[0.06]">
+                <p class="text-[11px] font-mono tracking-widest uppercase text-neutral-600">Legal</p>
+                <h1 class="text-3xl sm:text-4xl font-semibold text-white">Terms of Service</h1>
+                <p class="text-neutral-500 text-sm">Last updated: June 2026 &nbsp;·&nbsp; Effective immediately upon account creation or service use.</p>
+            </header>
 
-            <section class="space-y-3">
-                <h2 class="text-lg font-medium text-white tracking-tight">4. Billing, Suspension, & Data Retention</h2>
-                <p>All virtual infrastructure spaces operate on a subscription billing cycle. Invoices are dispatched automatically prior to your renewal date. Failure to process account settlements by the assigned due date will trigger automated instance suspension. To maintain storage integrity and capacity for active clients across our primary high-speed NVMe arrays, files and instance configurations associated with unpaid or inactive accounts will be permanently purged from our hardware arrays seven (7) days following initial service suspension. Regular external snapshot generation remains the user's operational responsibility.</p>
-            </section>
+            <div class="fade-up delay-2 space-y-10 text-[14px] text-neutral-400 font-normal">
 
-            <section class="space-y-3">
-                <h2 class="text-lg font-medium text-white tracking-tight">5. Billing Disputes & Payment Security</h2>
-                <p>We work tightly with premium, secured global payment providers (Stripe/PayPal). Initiating illegitimate or fraudulent billing disputes, chargebacks, or claims through external clearings banks will result in immediate, non-negotiable termination of all active data environments and permanent blocklists applied to the parent user profile and associated network IDs.</p>
-            </section>
+                <!-- Intro blurb -->
+                <p class="text-neutral-300 leading-relaxed border-l-2 border-[#0071e3]/40 pl-4 text-[13px]">
+                    Please read these terms carefully before using Sake's services. By using our platform you agree to be bound by them. If you disagree with any part, do not use our services.
+                </p>
 
-            <section class="space-y-3">
-                <h2 class="text-lg font-medium text-white tracking-tight">6. Limitations of Liability</h2>
-                <p>To the maximum extent permitted by applicable laws within Australia, Sake Digital, its operators, and its infrastructure partners shall not be held liable for any indirect, incidental, or consequential damages—including data loss, community disruptions, or financial variances—arising out of your engagement with our hosting systems.</p>
-            </section>
+                <!-- 1 -->
+                <section id="s1" class="space-y-3 scroll-mt-20">
+                    <h2 class="text-base font-semibold text-white">1. Acceptance of Terms</h2>
+                    <p>These Terms of Service ("Terms") form a binding agreement between you and Sake Digital ("Sake", "we", "us", or "our"). They apply to anyone who accesses sake.host, joins our Discord community, or purchases or uses any hosting environment we provide.</p>
+                    <p>By using our services you confirm that you are at least 18 years old (or have the consent of a parent or legal guardian), and that you have the legal capacity to enter into this agreement.</p>
+                </section>
 
+                <hr class="divider-gradient" />
+
+                <!-- 2 -->
+                <section id="s2" class="space-y-3 scroll-mt-20">
+                    <h2 class="text-base font-semibold text-white">2. Resource Allocations & Fair Use</h2>
+                    <p>Each plan includes a dedicated RAM allocation and storage quota as listed at the time of purchase. Compute resources are provided on shared hardware nodes unless you have purchased a Bare Metal plan.</p>
+                    <p>You agree not to run processes that place sustained, excessive demand on shared CPU, disk I/O, or network throughput in a way that degrades service for other customers on the same node. Common causes include unoptimised modpacks, infinite script loops, or cryptocurrency mining. Where such behaviour is detected, we may throttle, suspend, or migrate your instance after attempting to notify you. Persistent offences may result in service termination without refund.</p>
+                </section>
+
+                <hr class="divider-gradient" />
+
+                <!-- 3 -->
+                <section id="s3" class="space-y-3 scroll-mt-20">
+                    <h2 class="text-base font-semibold text-white">3. Network Operations & DDoS Mitigation</h2>
+                    <p>We operate game-aware DDoS filtering across our entire network. While our mitigation systems are designed to handle the vast majority of attacks without service interruption, we cannot guarantee 100% uptime during attacks of an unprecedented scale or type.</p>
+                    <p>If your instance becomes the sustained target of traffic that threatens the stability of our broader network, we reserve the right to null-route or isolate that instance until the attack subsides. We will notify you as soon as practically possible when this occurs.</p>
+                    <p>You must not use our infrastructure to launch, coordinate, or amplify attacks against any third party. Doing so will result in immediate termination and may be reported to relevant authorities.</p>
+                </section>
+
+                <hr class="divider-gradient" />
+
+                <!-- 4 -->
+                <section id="s4" class="space-y-3 scroll-mt-20">
+                    <h2 class="text-base font-semibold text-white">4. Billing, Suspension & Data Retention</h2>
+                    <p>Services are billed on a recurring subscription cycle. An invoice is issued automatically before each renewal date. Payment is due by the date shown on your invoice.</p>
+                    <p>If payment is not received by the due date, your service will be suspended. Suspended instances and all associated data — including world files, configurations, and backups stored on our infrastructure — will be permanently deleted <strong class="text-neutral-300 font-medium">7 days</strong> after the initial suspension date. We are not responsible for data lost due to non-payment.</p>
+                    <p>You are solely responsible for maintaining your own off-site backups. We strongly recommend exporting snapshots regularly.</p>
+                </section>
+
+                <hr class="divider-gradient" />
+
+                <!-- 5 -->
+                <section id="s5" class="space-y-3 scroll-mt-20">
+                    <h2 class="text-base font-semibold text-white">5. Billing Disputes & Fraud</h2>
+                    <p>All payments are processed through Stripe or PayPal. If you believe a charge is incorrect, contact our support team before initiating a dispute with your bank or payment provider. We will investigate and resolve legitimate billing issues promptly.</p>
+                    <p>Initiating a fraudulent chargeback or payment reversal — one where the charge was valid and the service was delivered — will result in the immediate suspension of all your active services, permanent account termination, and recovery of any outstanding amounts through available legal means.</p>
+                </section>
+
+                <hr class="divider-gradient" />
+
+                <!-- 6 -->
+                <section id="s6" class="space-y-3 scroll-mt-20">
+                    <h2 class="text-base font-semibold text-white">6. Prohibited Use</h2>
+                    <p>You may not use Sake's infrastructure for any of the following:</p>
+                    <ul class="space-y-2 pl-4 list-none">
+                        <li class="flex gap-2.5"><span class="text-neutral-600 shrink-0 mt-0.5">▪</span><span>Hosting, distributing, or storing illegal content of any kind</span></li>
+                        <li class="flex gap-2.5"><span class="text-neutral-600 shrink-0 mt-0.5">▪</span><span>Launching denial-of-service attacks, spam campaigns, or network intrusion attempts</span></li>
+                        <li class="flex gap-2.5"><span class="text-neutral-600 shrink-0 mt-0.5">▪</span><span>Cryptocurrency mining or any activity not related to game server hosting</span></li>
+                        <li class="flex gap-2.5"><span class="text-neutral-600 shrink-0 mt-0.5">▪</span><span>Reselling or subletting your allocated resources without prior written consent from Sake</span></li>
+                        <li class="flex gap-2.5"><span class="text-neutral-600 shrink-0 mt-0.5">▪</span><span>Any activity that violates applicable Australian or international law</span></li>
+                    </ul>
+                    <p>Violation of this section may result in immediate termination without refund and, where applicable, reporting to relevant law enforcement.</p>
+                </section>
+
+                <hr class="divider-gradient" />
+
+                <!-- 7 -->
+                <section id="s7" class="space-y-3 scroll-mt-20">
+                    <h2 class="text-base font-semibold text-white">7. Limitation of Liability</h2>
+                    <p>To the maximum extent permitted by Australian Consumer Law, Sake Digital and its operators are not liable for any indirect, incidental, special, or consequential damages arising from your use of our services. This includes, but is not limited to, loss of data, lost revenue, community disruption, or costs incurred from service downtime.</p>
+                    <p>Nothing in these Terms limits any rights you may have under the Australian Consumer Law that cannot lawfully be excluded.</p>
+                </section>
+
+                <hr class="divider-gradient" />
+
+                <!-- 8 -->
+                <section id="s8" class="space-y-3 scroll-mt-20">
+                    <h2 class="text-base font-semibold text-white">8. Modifications to These Terms</h2>
+                    <p>We may update these Terms from time to time. When we do, we will revise the "Last updated" date at the top of this page and, where the changes are material, notify active customers via email or a notice in our Discord server.</p>
+                    <p>Continued use of our services after changes take effect constitutes your acceptance of the revised Terms.</p>
+                </section>
+
+                <hr class="divider-gradient" />
+
+                <!-- 9 -->
+                <section id="s9" class="space-y-3 scroll-mt-20">
+                    <h2 class="text-base font-semibold text-white">9. Governing Law</h2>
+                    <p>These Terms are governed by the laws of Australia. Any disputes arising under or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of Australia.</p>
+                    <p>If you have any questions about these Terms, please reach out to us through our <a href="https://discord.gg/Nr4NWMqtDb" target="_blank" rel="noopener noreferrer" class="text-[#0071e3] hover:text-blue-400 transition-colors duration-150">Discord server</a>.</p>
+                </section>
+
+            </div>
         </main>
     </div>
 
-    <footer class="w-full bg-[#161617]/30 border-t border-white/[0.02] py-8 z-10 mt-auto">
-        <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] font-normal text-neutral-600">
-            <div class="flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-1">
-                <span>Copyright © 2026 Sake Digital.</span>
-                <span class="text-neutral-800">|</span>
-                <a href="/terms.html" class="hover:text-neutral-400 transition-colors text-neutral-500 font-medium">Terms of Service</a>
-                <span class="text-neutral-800">|</span>
-                <a href="#" class="hover:text-neutral-400 transition-colors">Privacy Policy</a>
+    <!-- ── Footer ── -->
+    <footer class="w-full border-t border-white/[0.04] py-7 mt-auto">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] font-normal text-neutral-700">
+            <div class="flex flex-wrap justify-center sm:justify-start items-center gap-x-4 gap-y-1">
+                <span>© 2026 Sake Digital. All rights reserved.</span>
+                <span class="text-neutral-800 hidden sm:inline">·</span>
+                <a href="/terms.html" class="text-neutral-500 font-medium hover:text-neutral-400 transition-colors duration-200">Terms of Service</a>
+                <span class="text-neutral-800">·</span>
+                <a href="https://discord.gg/Nr4NWMqtDb" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-400 transition-colors duration-200">Discord</a>
             </div>
-            <div class="font-mono tracking-wider text-neutral-700 uppercase text-[10px]">
+            <div class="font-mono tracking-widest text-neutral-800 uppercase text-[10px]">
                 Engineered in Australia
             </div>
         </div>
     </footer>
+
+    <!-- TOC active state scroll tracking -->
+    <script>
+        const sections = document.querySelectorAll('section[id]');
+        const tocLinks = document.querySelectorAll('.toc-link');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    tocLinks.forEach(l => l.classList.remove('active'));
+                    const active = document.querySelector(`.toc-link[href="#${entry.target.id}"]`);
+                    if (active) active.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-20% 0px -70% 0px' });
+        sections.forEach(s => observer.observe(s));
+    </script>
 
 </body>
 </html>
