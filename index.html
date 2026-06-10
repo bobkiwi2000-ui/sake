@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -145,16 +145,20 @@
 </head>
 <body class="min-h-screen w-full bg-[#0a0a0b] text-[#f5f5f7] flex flex-col justify-between overflow-x-hidden antialiased selection:bg-neutral-800">
 
+    <!-- ── Navigation ── -->
     <nav class="w-full bg-[#0a0a0b]/70 backdrop-blur-xl border-b border-white/[0.05] sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-6 h-12 flex items-center justify-between">
+            <!-- Wordmark -->
             <div class="font-semibold text-white tracking-[-0.04em] text-[15px] flex items-baseline select-none">
                 <span>sake</span><span class="text-neutral-600 font-light">.host</span>
             </div>
 
+            <!-- Right cluster -->
             <div class="flex items-center gap-5">
                 <a href="#expectations" class="nav-link text-[13px] font-medium tracking-tight text-neutral-400 hover:text-white transition-colors duration-200">
                     What to expect
                 </a>
+                <!-- Status pill -->
                 <div class="hidden sm:flex items-center gap-1.5 text-[11px] font-mono tracking-widest text-neutral-500 uppercase bg-neutral-900/80 px-2.5 py-1 rounded-full border border-white/[0.04]">
                     <span class="status-dot w-1.5 h-1.5 rounded-full bg-amber-500 inline-block"></span>
                     Pre-Launch
@@ -163,28 +167,34 @@
         </div>
     </nav>
 
-    <div class="w-full max-w-5xl mx-auto px-6 flex-1 flex flex-col justify-center gap-20 py-16 lg:py-28 overflow-hidden">
+    <!-- ── Main content ── -->
+    <div class="w-full max-w-5xl mx-auto px-6 flex-1 flex flex-col justify-center space-y-20 py-16 lg:py-28 overflow-hidden">
 
+        <!-- ── Hero ── -->
         <main class="relative w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start text-left">
             <div class="hero-glow" aria-hidden="true"></div>
 
-            <div class="relative z-10 lg:col-span-7 flex flex-col gap-6">
+            <div class="relative z-10 lg:col-span-7 space-y-6">
+                <!-- Eyebrow -->
                 <p class="fade-up delay-1 text-[13px] font-medium text-neutral-500 tracking-tight flex items-center gap-2">
                     <span class="w-4 h-px bg-neutral-700 inline-block"></span>
                     Sake Infrastructure
                 </p>
 
+                <!-- Headline -->
                 <h1 class="fade-up delay-2 text-[40px] sm:text-[58px] lg:text-[58px] xl:text-[68px] font-semibold tracking-[-0.038em] leading-[1.0] text-white">
                     The next biggest<br />
                     game server hosting.<br />
                     Built for absolute <span class="text-transparent bg-gradient-to-r from-neutral-500 to-neutral-700 bg-clip-text">scale.</span>
                 </h1>
 
+                <!-- Body -->
                 <p class="fade-up delay-3 text-neutral-400 text-sm sm:text-base font-normal max-w-lg leading-relaxed">
                     We're engineering a remarkably quiet, incredibly fast hosting network from the ground up.
                     Every layer — compute, routing, mitigation — purpose-built for games.
                 </p>
 
+                <!-- Specs accordion -->
                 <div class="fade-up delay-4 w-full max-w-xl pt-1">
                     <details class="group border-t border-white/[0.06]">
                         <summary class="flex justify-between items-center font-medium text-[13px] text-neutral-500 hover:text-neutral-300 cursor-pointer select-none py-4 transition-colors duration-200">
@@ -193,19 +203,19 @@
                         </summary>
 
                         <div class="pb-4 grid grid-cols-1 sm:grid-cols-2 gap-5 text-xs text-neutral-400">
-                            <div class="flex flex-col gap-1">
+                            <div class="space-y-1">
                                 <h4 class="text-white font-medium text-[13px]">Global Routing Matrix</h4>
                                 <p class="text-neutral-600 leading-relaxed">Low-latency nodes across the US, Canada, Australia, Europe, and Singapore — strategically placed to keep ticks tight.</p>
                             </div>
-                            <div class="flex flex-col gap-1">
+                            <div class="space-y-1">
                                 <h4 class="text-white font-medium text-[13px]">Compute Layer</h4>
                                 <p class="text-neutral-600 leading-relaxed">Exclusively high-frequency AMD Ryzen 9 architecture running PCIe NVMe storage arrays — no shared spindles.</p>
                             </div>
-                            <div class="flex flex-col gap-1">
+                            <div class="space-y-1">
                                 <h4 class="text-white font-medium text-[13px]">Mitigation Engine</h4>
                                 <p class="text-neutral-600 leading-relaxed">Game-aware DDoS filtering running continuously at the edge, before traffic reaches your instance.</p>
                             </div>
-                            <div class="flex flex-col gap-1">
+                            <div class="space-y-1">
                                 <h4 class="text-white font-medium text-[13px]">SLA Guarantee</h4>
                                 <p class="text-neutral-600 leading-relaxed">Enterprise-grade hardware redundancies with transparent, real-time node health monitoring.</p>
                             </div>
@@ -215,6 +225,7 @@
                 </div>
             </div>
 
+            <!-- CTA cluster -->
             <div class="fade-up delay-5 relative z-10 lg:col-span-5 flex flex-col items-start lg:items-end justify-center gap-3 pt-1 lg:pt-0 lg:text-right self-center">
                 <a
                     href="https://discord.gg/Nr4NWMqtDb"
@@ -222,6 +233,7 @@
                     rel="noopener noreferrer"
                     class="cta-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 bg-[#0071e3] text-white text-[14px] font-medium rounded-full select-none"
                 >
+                    <!-- Discord icon -->
                     <svg width="15" height="12" viewBox="0 0 71 55" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M60.1 4.9A58.5 58.5 0 0 0 45.5.3a.22.22 0 0 0-.23.11 40.8 40.8 0 0 0-1.8 3.7 54 54 0 0 0-16.24 0A37.3 37.3 0 0 0 25.4.41a.23.23 0 0 0-.23-.11 58.3 58.3 0 0 0-14.6 4.6.21.21 0 0 0-.1.08C1.58 18.73-.96 32.14.3 45.39a.24.24 0 0 0 .09.17 58.8 58.8 0 0 0 17.72 8.96.23.23 0 0 0 .25-.08 42.1 42.1 0 0 0 3.63-5.9.22.22 0 0 0-.12-.31 38.7 38.7 0 0 1-5.54-2.64.22.22 0 0 1-.02-.37c.37-.28.74-.57 1.1-.86a.22.22 0 0 1 .23-.03c11.62 5.31 24.21 5.31 35.7 0a.22.22 0 0 1 .23.03l1.09.86a.22.22 0 0 1-.02.37 36.4 36.4 0 0 1-5.55 2.63.22.22 0 0 0-.11.32 47.3 47.3 0 0 0 3.63 5.9.22.22 0 0 0 .25.08 58.6 58.6 0 0 0 17.74-8.96.23.23 0 0 0 .09-.16c1.48-15.29-2.48-28.59-10.49-40.4a.18.18 0 0 0-.1-.09ZM23.73 37.33c-3.5 0-6.38-3.21-6.38-7.16s2.82-7.16 6.38-7.16c3.59 0 6.44 3.24 6.38 7.16 0 3.95-2.82 7.16-6.38 7.16Zm23.59 0c-3.5 0-6.38-3.21-6.38-7.16s2.82-7.16 6.38-7.16c3.59 0 6.44 3.24 6.38 7.16 0 3.95-2.79 7.16-6.38 7.16Z"/></svg>
                     Claim Founders Rank
                 </a>
@@ -231,46 +243,121 @@
             </div>
         </main>
 
-        <section id="expectations" class="w-full flex flex-col gap-8">
+        <!-- ── Tier section ── -->
+        <section id="expectations" class="space-y-8 w-full">
             <hr class="divider-gradient" />
 
-            <div class="flex flex-col gap-2 pt-2">
+            <div class="space-y-2 pt-2">
                 <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-white">Tier Environments &amp; Target Metrics</h2>
                 <p class="text-neutral-600 text-sm max-w-md leading-relaxed">No arbitrary resource caps. Each tier is structured for stability, dedicated throughput, and raw performance.</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 w-full">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
 
-                <div class="tier-card bg-[#111112] border border-white/[0.05] rounded-2xl p-6 flex flex-col justify-between gap-5">
-                    <div class="flex flex-col gap-3">
-                        <div class="flex justify-between items-baseline gap-2">
-                            <h3 class="text-white font-medium text-[15px] tracking-tight">Casual</h3>
-                            <span class="text-neutral-400 text-[11px] font-mono whitespace-nowrap">$7.95 <span class="text-neutral-600">AUD / Mo</span></span>
+                <!-- Standard -->
+                <div class="tier-card bg-[#111112] border border-white/[0.05] rounded-2xl p-6 flex flex-col space-y-5">
+                    <div>
+                        <div class="flex justify-between items-baseline gap-2 mb-3">
+                            <h3 class="text-white font-medium text-[15px] tracking-tight">Standard</h3>
+                            <span class="text-neutral-400 text-[11px] font-mono whitespace-nowrap">~$3.50 <span class="text-neutral-600">AUD / GB</span></span>
                         </div>
-                        <p class="text-neutral-600 text-[12px] leading-relaxed">Streamlined vanilla environments with friends. Pure game loop automation with zero technical clutter.</p>
+                        <p class="text-neutral-600 text-[12px] leading-relaxed">Custom survival, vanilla instances, and community sessions. Consistent performance without the premium overhead.</p>
                     </div>
-                    <ul class="flex flex-col gap-2.5 text-[11px] font-normal text-neutral-500 border-t border-white/[0.04] pt-4">
+                    <ul class="space-y-2.5 text-[11px] font-normal text-neutral-500 border-t border-white/[0.04] pt-4">
                         <li class="flex items-start gap-2.5">
                             <span class="spec-check mt-0.5 shrink-0">✦</span>
-                            <span>Dedicated 3GB allocation</span>
+                            <span>High-clock compute nodes</span>
                         </li>
                         <li class="flex items-start gap-2.5">
                             <span class="spec-check mt-0.5 shrink-0">✦</span>
-                            <span>4-Click dashboard &amp; console access</span>
+                            <span>Enterprise PCIe 4.0 NVMe storage</span>
                         </li>
                         <li class="flex items-start gap-2.5">
                             <span class="spec-check mt-0.5 shrink-0">✦</span>
-                            <span>1-Click migration &amp; hardcore toggle</span>
+                            <span>Symmetric 1 Gbps uplinks</span>
                         </li>
                     </ul>
                 </div>
 
-                <div class="tier-card bg-[#111112] border border-white/[0.05] rounded-2xl p-6 flex flex-col justify-between gap-5">
-                    <div class="flex flex-col gap-3">
-                        <div class="flex justify-between items-baseline gap-2">
-                            <h3 class="text-white font-medium text-[15px] tracking-tight">Standard</h3>
-                            <span class="text-neutral-400 text-[11px] font-mono whitespace-nowrap">~$3.50 <span class="text-neutral-600">AUD / GB</span></span>
-                        </div>
-                        <p class="text-neutral-600 text-[12px] leading-relaxed">Custom survival, complex configurations, and community sessions. Full file access without the flagship overhead.</p>
+                <!-- Premium / Flagship -->
+                <div class="flagship-card tier-card rounded-2xl p-6 flex flex-col space-y-5 relative">
+                    <div class="absolute top-0 right-0 text-[#0071e3] text-[9px] uppercase font-mono tracking-widest px-3 py-1.5 rounded-bl-xl rounded-tr-2xl bg-[#0071e3]/10 border-l border-b border-[#0071e3]/20">
+                        Flagship
                     </div>
-                    <ul class="flex flex-col gap-2.5 text-[11px] font-normal text-neutral-500 border-t border-white/
+                    <div>
+                        <div class="flex justify-between items-baseline gap-2 mb-3">
+                            <h3 class="text-white font-semibold text-[15px] tracking-tight">Premium</h3>
+                            <span class="text-white text-[11px] font-mono whitespace-nowrap">~$6.00 <span class="text-neutral-500">AUD / GB</span></span>
+                        </div>
+                        <p class="text-neutral-400 text-[12px] leading-relaxed">Heavy entity processing, large modpacks, and competitive tournament setups. The absolute performance ceiling.</p>
+                    </div>
+                    <ul class="space-y-2.5 text-[11px] font-normal text-neutral-300 border-t border-[#0071e3]/15 pt-4">
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-[#0071e3] mt-0.5 shrink-0">✦</span>
+                            <span>AMD Ryzen 9 X3D architecture</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-[#0071e3] mt-0.5 shrink-0">✦</span>
+                            <span>Enterprise PCIe 5.0 NVMe storage</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-[#0071e3] mt-0.5 shrink-0">✦</span>
+                            <span>Priority routing + 10 Gbps uplinks</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Bare Metal -->
+                <div class="tier-card bg-gradient-to-b from-[#161618] to-[#101011] border border-white/[0.06] rounded-2xl p-6 flex flex-col space-y-5">
+                    <div>
+                        <div class="flex justify-between items-baseline gap-2 mb-3">
+                            <h3 class="text-white font-medium text-[15px] tracking-tight">Bare Metal</h3>
+                            <span class="text-[#0071e3] text-[11px] font-mono whitespace-nowrap">Pay-as-you-go</span>
+                        </div>
+                        <p class="text-neutral-600 text-[12px] leading-relaxed">Entire physical nodes, dedicated entirely to your operations. No virtualization overhead, no neighbors, total hardware command.</p>
+                    </div>
+                    <ul class="space-y-2.5 text-[11px] font-normal text-neutral-500 border-t border-white/[0.04] pt-4">
+                        <li class="flex items-start gap-2.5">
+                            <span class="spec-check mt-0.5 shrink-0">✦</span>
+                            <span>100% dedicated physical servers</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="spec-check mt-0.5 shrink-0">✦</span>
+                            <span>Resource metered by the hour</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="spec-check mt-0.5 shrink-0">✦</span>
+                            <span>Custom network firewalls &amp; OS control</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Disclaimer -->
+            <p class="text-[11px] text-neutral-700 max-w-xl leading-relaxed select-none flex items-start gap-2">
+                <span class="shrink-0">⚠</span>
+                Metrics, architecture allocations, and target pricing are subject to change prior to public launch.
+            </p>
+        </section>
+
+    </div>
+
+    <!-- ── Footer ── -->
+    <footer class="w-full border-t border-white/[0.04] py-7 mt-auto">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] font-normal text-neutral-700">
+            <div class="flex flex-wrap justify-center sm:justify-start items-center gap-x-4 gap-y-1">
+                <span>© 2026 Sake Digital. All rights reserved.</span>
+                <span class="text-neutral-800 hidden sm:inline">·</span>
+                <a href="/terms.html" class="hover:text-neutral-400 transition-colors duration-200">Terms of Service</a>
+                <span class="text-neutral-800">·</span>
+                <a href="https://discord.gg/Nr4NWMqtDb" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-400 transition-colors duration-200">Discord</a>
+            </div>
+            <div class="font-mono tracking-widest text-neutral-800 uppercase text-[10px]">
+                Engineered in Australia
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
