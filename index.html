@@ -109,7 +109,6 @@
                     rel="noopener noreferrer"
                     class="cta-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 bg-[#0071e3] text-white text-[14px] font-medium rounded-full select-none"
                 >
-                    <svg width="15" height="12" viewBox="0 0 71 55" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M60.1 4.9A58.5 58.5 0 0 0 45.5.3a.22.22 0 0 0-.23.11 40.8 40.8 0 0 0-1.8 3.7 54 54 0 0 0-16.24 0A37.3 37.3 0 0 0 25.4.41a.23.23 0 0 0-.23-.11 58.3 58.3 0 0 0-14.6 4.6.21.21 0 0 0-.1.08C1.58 18.73-.96 32.14.3 45.39a.24.24 0 0 0 .09.17 58.8 58.8 0 0 0 17.72 8.96.23.23 0 0 0 .25-.08 42.1 42.1 0 0 0 3.63-5.9.22.22 0 0 0-.12-.31 38.7 38.7 0 0 1-5.54-2.64.22.22 0 0 1-.02-.37c.37-.28.74-.57 1.1-.86a.22.22 0 0 1 .23-.03c11.62 5.31 24.21 5.31 35.7 0a.22.22 0 0 1 .23.03l1.09.86a.22.22 0 0 1-.02.37 36.4 36.4 0 0 1-5.55 2.63.22.22 0 0 0-.11.32 47.3 47.3 0 0 0 3.63 5.9.22.22 0 0 0 .25.08 58.6 58.6 0 0 0 17.74-8.96.23.23 0 0 0 .09-.16c1.48-15.29-2.48-28.59-10.49-40.4a.18.18 0 0 0-.1-.09ZM23.73 37.33c-3.5 0-6.38-3.21-6.38-7.16s2.82-7.16 6.38-7.16c3.59 0 6.44 3.24 6.38 7.16 0 3.95-2.82 7.16-6.38 7.16Zm23.59 0c-3.5 0-6.38-3.21-6.38-7.16s2.82-7.16 6.38-7.16c3.59 0 6.44 3.24 6.38 7.16 0 3.95-2.79 7.16-6.38 7.16Z"/></svg>
                     Claim Founders Rank
                 </a>
                 <p class="text-[12px] text-neutral-600 font-normal max-w-[190px] leading-snug">
@@ -126,7 +125,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
-                <!-- Standard -->
                 <div class="tier-card bg-[#111112] border border-white/[0.05] rounded-2xl p-6 flex flex-col space-y-5">
                     <div>
                         <div class="flex justify-between items-baseline gap-2 mb-3">
@@ -144,14 +142,9 @@
                             <span class="spec-check mt-0.5 shrink-0">✦</span>
                             <span>Fast NVMe storage</span>
                         </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="spec-check mt-0.5 shrink-0">✦</span>
-                            <span>Unlimited player slots</span>
-                        </li>
                     </ul>
                 </div>
 
-                <!-- Premium -->
                 <div class="flagship-card tier-card rounded-2xl p-6 flex flex-col space-y-5 relative">
                     <div class="absolute top-0 right-0 text-[#0071e3] text-[9px] uppercase font-mono tracking-widest px-3 py-1.5 rounded-bl-xl rounded-tr-2xl bg-[#0071e3]/10 border-l border-b border-[#0071e3]/20">
                         Flagship
@@ -172,14 +165,9 @@
                             <span class="text-[#0071e3] mt-0.5 shrink-0">✦</span>
                             <span>Enterprise NVMe arrays</span>
                         </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="text-[#0071e3] mt-0.5 shrink-0">✦</span>
-                            <span>Priority routing</span>
-                        </li>
                     </ul>
                 </div>
 
-                <!-- Bare Metal -->
                 <div class="tier-card bg-gradient-to-b from-[#161618] to-[#101011] border border-white/[0.06] rounded-2xl p-6 flex flex-col space-y-5">
                     <div>
                         <div class="flex justify-between items-baseline gap-2 mb-3">
@@ -197,18 +185,9 @@
                             <span class="spec-check mt-0.5 shrink-0">✦</span>
                             <span>Hourly billing</span>
                         </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="spec-check mt-0.5 shrink-0">✦</span>
-                            <span>Total OS control</span>
-                        </li>
                     </ul>
                 </div>
             </div>
-
-            <p class="text-[11px] text-neutral-700 max-w-xl leading-relaxed select-none flex items-start gap-2">
-                <span class="shrink-0">⚠</span>
-                Prices and specs might shift slightly before we go live.
-            </p>
         </section>
     </div>
 
@@ -224,5 +203,20 @@
             </div>
         </div>
     </footer>
+
+    <!-- Mascot Container -->
+    <div class="fixed bottom-0 left-0 w-full h-24 pointer-events-none z-50 overflow-hidden">
+        <div id="mascot" class="absolute bottom-0 left-[-150px] transition-all duration-[3000ms] ease-linear text-4xl">
+            🐨
+        </div>
+    </div>
+
+    <script>
+        const mascot = document.getElementById('mascot');
+        window.addEventListener('scroll', () => {
+            const atBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50;
+            mascot.style.left = atBottom ? '100%' : '-150px';
+        });
+    </script>
 </body>
 </html>
