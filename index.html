@@ -1,164 +1,49 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Sake — Premium Game Environments</title>
+    <title>Sake — Game hosting, but actually fast.</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* ── Typography ── */
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; -webkit-font-smoothing: antialiased; }
         h1, h2, h3 { letter-spacing: -0.03em; font-weight: 600; }
         p, span, a, li { letter-spacing: -0.011em; line-height: 1.55; }
-
         details summary::-webkit-details-marker { display: none; }
         details summary { list-style: none; }
-
-        /* ── Page load fade-in ── */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(14px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
         .fade-up { opacity: 0; animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-        .delay-1 { animation-delay: 0.05s; }
-        .delay-2 { animation-delay: 0.13s; }
-        .delay-3 { animation-delay: 0.22s; }
-        .delay-4 { animation-delay: 0.32s; }
-        .delay-5 { animation-delay: 0.42s; }
-
-        @media (prefers-reduced-motion: reduce) {
-            .fade-up { opacity: 1; animation: none; }
-        }
-
-        /* ── Hero ambient glow ── */
-        .hero-glow {
-            position: absolute;
-            width: 680px;
-            height: 420px;
-            top: -60px;
-            left: -100px;
-            background: radial-gradient(ellipse at 40% 40%, rgba(0,113,227,0.09) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: 0;
-            filter: blur(40px);
-        }
-
-        /* ── Status pill pulse ── */
-        @keyframes pulse-dot {
-            0%, 100% { opacity: 1; }
-            50%       { opacity: 0.35; }
-        }
+        .delay-1 { animation-delay: 0.05s; } .delay-2 { animation-delay: 0.13s; } .delay-3 { animation-delay: 0.22s; } .delay-4 { animation-delay: 0.32s; } .delay-5 { animation-delay: 0.42s; }
+        .hero-glow { position: absolute; width: 680px; height: 420px; top: -60px; left: -100px; background: radial-gradient(ellipse at 40% 40%, rgba(0,113,227,0.09) 0%, transparent 70%); pointer-events: none; z-index: 0; filter: blur(40px); }
+        @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
         .status-dot { animation: pulse-dot 2.4s ease-in-out infinite; }
-
-        /* ── Flagship card shimmer border ── */
-        @keyframes border-rotate {
-            from { --angle: 0deg; }
-            to   { --angle: 360deg; }
-        }
-        @property --angle {
-            syntax: '<angle>';
-            initial-value: 0deg;
-            inherits: false;
-        }
-        .flagship-card {
-            background: #161617;
-            border: 1px solid transparent;
-            background-clip: padding-box;
-            position: relative;
-        }
-        .flagship-card::before {
-            content: '';
-            position: absolute;
-            inset: -1px;
-            border-radius: inherit;
-            padding: 1px;
-            background: conic-gradient(from var(--angle), transparent 60%, rgba(0,113,227,0.55) 75%, rgba(100,180,255,0.4) 80%, transparent 90%);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            animation: border-rotate 4s linear infinite;
-            pointer-events: none;
-        }
-
-        /* ── Tier card hover lift ── */
-        .tier-card {
-            transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s ease;
-        }
-        .tier-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.35);
-        }
-
-        /* ── Nav link underline ── */
-        .nav-link {
-            position: relative;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0; right: 0;
-            height: 1px;
-            background: currentColor;
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.2s ease;
-        }
-        .nav-link:hover::after { transform: scaleX(1); }
-
-        /* ── CTA button glow ── */
-        .cta-btn {
-            box-shadow: 0 0 0 0 rgba(0,113,227,0);
-            transition: background-color 0.18s ease, box-shadow 0.25s ease, transform 0.15s ease;
-        }
-        .cta-btn:hover {
-            background-color: #147ce5;
-            box-shadow: 0 4px 20px rgba(0,113,227,0.38);
-            transform: translateY(-1px);
-        }
-        .cta-btn:active { transform: translateY(0); }
-
-        /* ── Spec item check ── */
+        @keyframes border-rotate { from { --angle: 0deg; } to { --angle: 360deg; } }
+        @property --angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+        .flagship-card { background: #161617; border: 1px solid transparent; background-clip: padding-box; position: relative; }
+        .flagship-card::before { content: ''; position: absolute; inset: -1px; border-radius: inherit; padding: 1px; background: conic-gradient(from var(--angle), transparent 60%, rgba(0,113,227,0.55) 75%, rgba(100,180,255,0.4) 80%, transparent 90%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation: border-rotate 4s linear infinite; pointer-events: none; }
+        .tier-card { transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s ease; }
+        .tier-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.35); }
+        .cta-btn { transition: background-color 0.18s ease, box-shadow 0.25s ease, transform 0.15s ease; }
+        .cta-btn:hover { background-color: #147ce5; box-shadow: 0 4px 20px rgba(0,113,227,0.38); transform: translateY(-1px); }
         .spec-check { color: #0071e3; }
-
-        /* ── Divider gradient ── */
-        .divider-gradient {
-            border: none;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.07) 30%, rgba(255,255,255,0.07) 70%, transparent);
-        }
-
-        /* ── Details expand ── */
+        .divider-gradient { border: none; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.07) 30%, rgba(255,255,255,0.07) 70%, transparent); }
         details[open] .chevron { transform: rotate(180deg); }
         .chevron { transition: transform 0.22s ease; display: inline-block; }
     </style>
 </head>
 <body class="min-h-screen w-full bg-[#0a0a0b] text-[#f5f5f7] flex flex-col justify-between overflow-x-hidden antialiased selection:bg-neutral-800">
 
-    <!-- ── Navigation ── -->
     <nav class="w-full bg-[#0a0a0b]/70 backdrop-blur-xl border-b border-white/[0.05] sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-6 h-12 flex items-center justify-between">
-            <!-- Wordmark -->
             <div class="font-semibold text-white tracking-[-0.04em] text-[15px] flex items-baseline select-none">
                 <span>sake</span><span class="text-neutral-600 font-light">.host</span>
             </div>
-
-            <!-- Right cluster -->
             <div class="flex items-center gap-5">
-                <a href="#expectations" class="nav-link text-[13px] font-medium tracking-tight text-neutral-400 hover:text-white transition-colors duration-200">
-                    What to expect
-                </a>
-                <!-- Status pill -->
+                <a href="#expectations" class="text-[13px] font-medium tracking-tight text-neutral-400 hover:text-white transition-colors duration-200">Why Sake?</a>
                 <div class="hidden sm:flex items-center gap-1.5 text-[11px] font-mono tracking-widest text-neutral-500 uppercase bg-neutral-900/80 px-2.5 py-1 rounded-full border border-white/[0.04]">
                     <span class="status-dot w-1.5 h-1.5 rounded-full bg-amber-500 inline-block"></span>
                     Pre-Launch
@@ -167,57 +52,49 @@
         </div>
     </nav>
 
-    <!-- ── Main content ── -->
     <div class="w-full max-w-5xl mx-auto px-6 flex-1 flex flex-col justify-center space-y-20 py-16 lg:py-28 overflow-hidden">
-
-        <!-- ── Hero ── -->
         <main class="relative w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start text-left">
             <div class="hero-glow" aria-hidden="true"></div>
 
             <div class="relative z-10 lg:col-span-7 space-y-6">
-                <!-- Eyebrow -->
                 <p class="fade-up delay-1 text-[13px] font-medium text-neutral-500 tracking-tight flex items-center gap-2">
                     <span class="w-4 h-px bg-neutral-700 inline-block"></span>
-                    Sake Infrastructure
+                    Hosting Done Right
                 </p>
 
-                <!-- Headline -->
                 <h1 class="fade-up delay-2 text-[40px] sm:text-[58px] lg:text-[58px] xl:text-[68px] font-semibold tracking-[-0.038em] leading-[1.0] text-white">
-                    The next biggest<br />
-                    game server hosting.<br />
-                    Built for absolute <span class="text-transparent bg-gradient-to-r from-neutral-500 to-neutral-700 bg-clip-text">scale.</span>
+                    Game servers,<br />
+                    minus the nonsense.<br />
+                    Built for <span class="text-transparent bg-gradient-to-r from-neutral-500 to-neutral-700 bg-clip-text">performance.</span>
                 </h1>
 
-                <!-- Body -->
                 <p class="fade-up delay-3 text-neutral-400 text-sm sm:text-base font-normal max-w-lg leading-relaxed">
-                    We're engineering a remarkably quiet, incredibly fast hosting network from the ground up.
-                    Every layer — compute, routing, mitigation — purpose-built for games.
+                    We’re building a hosting network that just works. No weird lag, no bloat, no confusing panels. Just raw speed for your community.
                 </p>
 
-                <!-- Specs accordion -->
                 <div class="fade-up delay-4 w-full max-w-xl pt-1">
                     <details class="group border-t border-white/[0.06]">
                         <summary class="flex justify-between items-center font-medium text-[13px] text-neutral-500 hover:text-neutral-300 cursor-pointer select-none py-4 transition-colors duration-200">
-                            <span>Global network architecture &amp; hardware specs</span>
+                            <span>How we keep things fast</span>
                             <span class="chevron text-neutral-600 text-[10px] leading-none">▼</span>
                         </summary>
 
                         <div class="pb-4 grid grid-cols-1 sm:grid-cols-2 gap-5 text-xs text-neutral-400">
                             <div class="space-y-1">
-                                <h4 class="text-white font-medium text-[13px]">Global Routing Matrix</h4>
-                                <p class="text-neutral-600 leading-relaxed">Low-latency nodes across the US, Canada, Australia, Europe, and Singapore — strategically placed to keep ticks tight.</p>
+                                <h4 class="text-white font-medium text-[13px]">Global Routing</h4>
+                                <p class="text-neutral-600 leading-relaxed">Nodes across the globe—US, Australia, Europe, Asia—kept strategically close to your players.</p>
                             </div>
                             <div class="space-y-1">
-                                <h4 class="text-white font-medium text-[13px]">Compute Layer</h4>
-                                <p class="text-neutral-600 leading-relaxed">Exclusively high-frequency AMD Ryzen 9 architecture running PCIe NVMe storage arrays — no shared spindles.</p>
+                                <h4 class="text-white font-medium text-[13px]">Hardware that rips</h4>
+                                <p class="text-neutral-600 leading-relaxed">We use high-frequency Ryzen CPUs and NVMe storage. Because your server shouldn't struggle to load chunks.</p>
                             </div>
                             <div class="space-y-1">
-                                <h4 class="text-white font-medium text-[13px]">Mitigation Engine</h4>
-                                <p class="text-neutral-600 leading-relaxed">Game-aware DDoS filtering running continuously at the edge, before traffic reaches your instance.</p>
+                                <h4 class="text-white font-medium text-[13px]">Anti-DDoS Shielding</h4>
+                                <p class="text-neutral-600 leading-relaxed">Smart filtering that stops attacks before they touch your server. Keep the griefers out.</p>
                             </div>
                             <div class="space-y-1">
-                                <h4 class="text-white font-medium text-[13px]">SLA Guarantee</h4>
-                                <p class="text-neutral-600 leading-relaxed">Enterprise-grade hardware redundancies with transparent, real-time node health monitoring.</p>
+                                <h4 class="text-white font-medium text-[13px]">Reliability</h4>
+                                <p class="text-neutral-600 leading-relaxed">Serious hardware, transparent health monitoring. We care about your uptime as much as you do.</p>
                             </div>
                         </div>
                     </details>
@@ -225,7 +102,6 @@
                 </div>
             </div>
 
-            <!-- CTA cluster -->
             <div class="fade-up delay-5 relative z-10 lg:col-span-5 flex flex-col items-start lg:items-end justify-center gap-3 pt-1 lg:pt-0 lg:text-right self-center">
                 <a
                     href="https://discord.gg/Nr4NWMqtDb"
@@ -233,27 +109,23 @@
                     rel="noopener noreferrer"
                     class="cta-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 bg-[#0071e3] text-white text-[14px] font-medium rounded-full select-none"
                 >
-                    <!-- Discord icon -->
                     <svg width="15" height="12" viewBox="0 0 71 55" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M60.1 4.9A58.5 58.5 0 0 0 45.5.3a.22.22 0 0 0-.23.11 40.8 40.8 0 0 0-1.8 3.7 54 54 0 0 0-16.24 0A37.3 37.3 0 0 0 25.4.41a.23.23 0 0 0-.23-.11 58.3 58.3 0 0 0-14.6 4.6.21.21 0 0 0-.1.08C1.58 18.73-.96 32.14.3 45.39a.24.24 0 0 0 .09.17 58.8 58.8 0 0 0 17.72 8.96.23.23 0 0 0 .25-.08 42.1 42.1 0 0 0 3.63-5.9.22.22 0 0 0-.12-.31 38.7 38.7 0 0 1-5.54-2.64.22.22 0 0 1-.02-.37c.37-.28.74-.57 1.1-.86a.22.22 0 0 1 .23-.03c11.62 5.31 24.21 5.31 35.7 0a.22.22 0 0 1 .23.03l1.09.86a.22.22 0 0 1-.02.37 36.4 36.4 0 0 1-5.55 2.63.22.22 0 0 0-.11.32 47.3 47.3 0 0 0 3.63 5.9.22.22 0 0 0 .25.08 58.6 58.6 0 0 0 17.74-8.96.23.23 0 0 0 .09-.16c1.48-15.29-2.48-28.59-10.49-40.4a.18.18 0 0 0-.1-.09ZM23.73 37.33c-3.5 0-6.38-3.21-6.38-7.16s2.82-7.16 6.38-7.16c3.59 0 6.44 3.24 6.38 7.16 0 3.95-2.82 7.16-6.38 7.16Zm23.59 0c-3.5 0-6.38-3.21-6.38-7.16s2.82-7.16 6.38-7.16c3.59 0 6.44 3.24 6.38 7.16 0 3.95-2.79 7.16-6.38 7.16Z"/></svg>
                     Claim Founders Rank
                 </a>
                 <p class="text-[12px] text-neutral-600 font-normal max-w-[190px] leading-snug">
-                    Join the Discord to lock in early customer benefits before launch.
+                    Join the Discord to grab early benefits before launch.
                 </p>
             </div>
         </main>
 
-        <!-- ── Tier section ── -->
         <section id="expectations" class="space-y-8 w-full">
             <hr class="divider-gradient" />
-
             <div class="space-y-2 pt-2">
-                <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-white">Tier Environments &amp; Target Metrics</h2>
-                <p class="text-neutral-600 text-sm max-w-md leading-relaxed">No arbitrary resource caps. Each tier is structured for stability, dedicated throughput, and raw performance.</p>
+                <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-white">Choose your vibe</h2>
+                <p class="text-neutral-600 text-sm max-w-md leading-relaxed">Pick the tier that fits your crew. No hidden fees, no "magic" resource caps.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
-
                 <!-- Standard -->
                 <div class="tier-card bg-[#111112] border border-white/[0.05] rounded-2xl p-6 flex flex-col space-y-5">
                     <div>
@@ -261,25 +133,25 @@
                             <h3 class="text-white font-medium text-[15px] tracking-tight">Standard</h3>
                             <span class="text-neutral-400 text-[11px] font-mono whitespace-nowrap">~$3.50 <span class="text-neutral-600">AUD / GB</span></span>
                         </div>
-                        <p class="text-neutral-600 text-[12px] leading-relaxed">Custom survival, vanilla instances, and community sessions. Consistent performance without the premium overhead.</p>
+                        <p class="text-neutral-600 text-[12px] leading-relaxed">For your survival world, modpacks, or just chilling with the friend group. Solid performance, zero headache.</p>
                     </div>
                     <ul class="space-y-2.5 text-[11px] font-normal text-neutral-500 border-t border-white/[0.04] pt-4">
                         <li class="flex items-start gap-2.5">
                             <span class="spec-check mt-0.5 shrink-0">✦</span>
-                            <span>High-clock compute nodes</span>
+                            <span>Ryzen high-clock compute</span>
                         </li>
                         <li class="flex items-start gap-2.5">
                             <span class="spec-check mt-0.5 shrink-0">✦</span>
-                            <span>Enterprise PCIe 4.0 NVMe storage</span>
+                            <span>Fast NVMe storage</span>
                         </li>
                         <li class="flex items-start gap-2.5">
                             <span class="spec-check mt-0.5 shrink-0">✦</span>
-                            <span>Symmetric 1 Gbps uplinks</span>
+                            <span>Unlimited player slots</span>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Premium / Flagship -->
+                <!-- Premium -->
                 <div class="flagship-card tier-card rounded-2xl p-6 flex flex-col space-y-5 relative">
                     <div class="absolute top-0 right-0 text-[#0071e3] text-[9px] uppercase font-mono tracking-widest px-3 py-1.5 rounded-bl-xl rounded-tr-2xl bg-[#0071e3]/10 border-l border-b border-[#0071e3]/20">
                         Flagship
@@ -289,20 +161,20 @@
                             <h3 class="text-white font-semibold text-[15px] tracking-tight">Premium</h3>
                             <span class="text-white text-[11px] font-mono whitespace-nowrap">~$6.00 <span class="text-neutral-500">AUD / GB</span></span>
                         </div>
-                        <p class="text-neutral-400 text-[12px] leading-relaxed">Heavy entity processing, large modpacks, and competitive tournament setups. The absolute performance ceiling.</p>
+                        <p class="text-neutral-400 text-[12px] leading-relaxed">Need more horsepower? This is for heavy modpacks, tournaments, and big networks.</p>
                     </div>
                     <ul class="space-y-2.5 text-[11px] font-normal text-neutral-300 border-t border-[#0071e3]/15 pt-4">
                         <li class="flex items-start gap-2.5">
                             <span class="text-[#0071e3] mt-0.5 shrink-0">✦</span>
-                            <span>AMD Ryzen 9 X3D architecture</span>
+                            <span>Ryzen 9 X3D power</span>
                         </li>
                         <li class="flex items-start gap-2.5">
                             <span class="text-[#0071e3] mt-0.5 shrink-0">✦</span>
-                            <span>Enterprise PCIe 5.0 NVMe storage</span>
+                            <span>Enterprise NVMe arrays</span>
                         </li>
                         <li class="flex items-start gap-2.5">
                             <span class="text-[#0071e3] mt-0.5 shrink-0">✦</span>
-                            <span>Priority routing + 10 Gbps uplinks</span>
+                            <span>Priority routing</span>
                         </li>
                     </ul>
                 </div>
@@ -314,43 +186,37 @@
                             <h3 class="text-white font-medium text-[15px] tracking-tight">Bare Metal</h3>
                             <span class="text-[#0071e3] text-[11px] font-mono whitespace-nowrap">Pay-as-you-go</span>
                         </div>
-                        <p class="text-neutral-600 text-[12px] leading-relaxed">Entire physical nodes, dedicated entirely to your operations. No virtualization overhead, no neighbors, total hardware command.</p>
+                        <p class="text-neutral-600 text-[12px] leading-relaxed">Your own private beast. No neighbors, no virtualization limits. Total hardware command.</p>
                     </div>
                     <ul class="space-y-2.5 text-[11px] font-normal text-neutral-500 border-t border-white/[0.04] pt-4">
                         <li class="flex items-start gap-2.5">
                             <span class="spec-check mt-0.5 shrink-0">✦</span>
-                            <span>100% dedicated physical servers</span>
+                            <span>100% dedicated hardware</span>
                         </li>
                         <li class="flex items-start gap-2.5">
                             <span class="spec-check mt-0.5 shrink-0">✦</span>
-                            <span>Resource metered by the hour</span>
+                            <span>Hourly billing</span>
                         </li>
                         <li class="flex items-start gap-2.5">
                             <span class="spec-check mt-0.5 shrink-0">✦</span>
-                            <span>Custom network firewalls &amp; OS control</span>
+                            <span>Total OS control</span>
                         </li>
                     </ul>
                 </div>
-
             </div>
 
-            <!-- Disclaimer -->
             <p class="text-[11px] text-neutral-700 max-w-xl leading-relaxed select-none flex items-start gap-2">
                 <span class="shrink-0">⚠</span>
-                Metrics, architecture allocations, and target pricing are subject to change prior to public launch.
+                Prices and specs might shift slightly before we go live.
             </p>
         </section>
-
     </div>
 
-    <!-- ── Footer ── -->
     <footer class="w-full border-t border-white/[0.04] py-7 mt-auto">
         <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] font-normal text-neutral-700">
             <div class="flex flex-wrap justify-center sm:justify-start items-center gap-x-4 gap-y-1">
-                <span>© 2026 Sake Digital. All rights reserved.</span>
+                <span>© 2026 Sake Digital.</span>
                 <span class="text-neutral-800 hidden sm:inline">·</span>
-                <a href="/terms.html" class="hover:text-neutral-400 transition-colors duration-200">Terms of Service</a>
-                <span class="text-neutral-800">·</span>
                 <a href="https://discord.gg/Nr4NWMqtDb" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-400 transition-colors duration-200">Discord</a>
             </div>
             <div class="font-mono tracking-widest text-neutral-800 uppercase text-[10px]">
@@ -358,6 +224,5 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>
