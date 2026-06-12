@@ -27,6 +27,7 @@
         .tier-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.35); }
         .cta-btn { transition: background-color 0.18s ease, box-shadow 0.25s ease, transform 0.15s ease; }
         .cta-btn:hover { background-color: #147ce5; box-shadow: 0 4px 20px rgba(0,113,227,0.38); transform: translateY(-1px); }
+        .spec-check { color: #0071e3; }
         .divider-gradient { border: none; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.07) 30%, rgba(255,255,255,0.07) 70%, transparent); }
     </style>
 </head>
@@ -97,10 +98,62 @@
             <hr class="divider-gradient" />
             <h2 class="text-2xl font-semibold text-white tracking-tight">Choose your vibe</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-                <!-- Tiers omitted for brevity, keeping existing structure -->
+                <div class="tier-card bg-[#111112] border border-white/[0.05] rounded-2xl p-6 flex flex-col space-y-5">
+                    <div>
+                        <div class="flex justify-between items-baseline gap-2 mb-3">
+                            <h3 class="text-white font-medium text-[15px] tracking-tight">Standard</h3>
+                            <span class="text-neutral-400 text-[11px] font-mono whitespace-nowrap">~$3.50 <span class="text-neutral-600">AUD / GB</span></span>
+                        </div>
+                        <p class="text-neutral-600 text-[12px] leading-relaxed">For your survival world, modpacks, or just chilling with the friend group. Solid performance, zero headache.</p>
+                    </div>
+                    <ul class="space-y-2.5 text-[11px] font-normal text-neutral-500 border-t border-white/[0.04] pt-4">
+                        <li class="flex items-start gap-2.5"><span class="spec-check mt-0.5 shrink-0">✦</span><span>Ryzen high-clock compute</span></li>
+                        <li class="flex items-start gap-2.5"><span class="spec-check mt-0.5 shrink-0">✦</span><span>Fast NVMe storage</span></li>
+                    </ul>
+                </div>
+                <div class="flagship-card tier-card rounded-2xl p-6 flex flex-col space-y-5 relative">
+                    <div class="absolute top-0 right-0 text-[#0071e3] text-[9px] uppercase font-mono tracking-widest px-3 py-1.5 rounded-bl-xl rounded-tr-2xl bg-[#0071e3]/10 border-l border-b border-[#0071e3]/20">Flagship</div>
+                    <div>
+                        <div class="flex justify-between items-baseline gap-2 mb-3">
+                            <h3 class="text-white font-semibold text-[15px] tracking-tight">Premium</h3>
+                            <span class="text-white text-[11px] font-mono whitespace-nowrap">~$6.00 <span class="text-neutral-500">AUD / GB</span></span>
+                        </div>
+                        <p class="text-neutral-400 text-[12px] leading-relaxed">Need more horsepower? This is for heavy modpacks, tournaments, and big networks.</p>
+                    </div>
+                    <ul class="space-y-2.5 text-[11px] font-normal text-neutral-300 border-t border-[#0071e3]/15 pt-4">
+                        <li class="flex items-start gap-2.5"><span class="text-[#0071e3] mt-0.5 shrink-0">✦</span><span>Ryzen 9 X3D power</span></li>
+                        <li class="flex items-start gap-2.5"><span class="text-[#0071e3] mt-0.5 shrink-0">✦</span><span>Enterprise NVMe arrays</span></li>
+                    </ul>
+                </div>
+                <div class="tier-card bg-gradient-to-b from-[#161618] to-[#101011] border border-white/[0.06] rounded-2xl p-6 flex flex-col space-y-5">
+                    <div>
+                        <div class="flex justify-between items-baseline gap-2 mb-3">
+                            <h3 class="text-white font-medium text-[15px] tracking-tight">Bare Metal</h3>
+                            <span class="text-[#0071e3] text-[11px] font-mono whitespace-nowrap">Pay-as-you-go</span>
+                        </div>
+                        <p class="text-neutral-600 text-[12px] leading-relaxed">Your own private beast. No neighbors, no virtualization limits. Total hardware command.</p>
+                    </div>
+                    <ul class="space-y-2.5 text-[11px] font-normal text-neutral-500 border-t border-white/[0.04] pt-4">
+                        <li class="flex items-start gap-2.5"><span class="spec-check mt-0.5 shrink-0">✦</span><span>100% dedicated hardware</span></li>
+                        <li class="flex items-start gap-2.5"><span class="spec-check mt-0.5 shrink-0">✦</span><span>Hourly billing</span></li>
+                    </ul>
+                </div>
             </div>
         </section>
     </div>
+
+    <footer class="w-full border-t border-white/[0.04] py-7 mt-auto">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] font-normal text-neutral-700">
+            <div class="flex flex-wrap justify-center sm:justify-start items-center gap-x-4 gap-y-1">
+                <span>© 2026 Sake Digital.</span>
+                <span class="text-neutral-800 hidden sm:inline">·</span>
+                <a href="https://discord.gg/Nr4NWMqtDb" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-400 transition-colors duration-200">Discord</a>
+            </div>
+            <div class="font-mono tracking-widest text-neutral-800 uppercase text-[10px]">
+                Engineered in Australia
+            </div>
+        </div>
+    </footer>
 
     <!-- Mascot -->
     <div class="fixed bottom-0 left-0 w-full h-24 pointer-events-none z-50 overflow-hidden">
