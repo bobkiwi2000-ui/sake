@@ -3,243 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Terms of Service — Sake</title>
+    <title>Sake — Pure Performance Hosting.</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+        *, *::before, *::after { box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+            -webkit-font-smoothing: antialiased; 
+            background-color: #000000;
         }
-        h1, h2, h3 { letter-spacing: -0.03em; }
-        p, span, a, li { letter-spacing: -0.011em; line-height: 1.65; }
-
-        .nav-link { position: relative; }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -2px; left: 0; right: 0;
-            height: 1px;
-            background: currentColor;
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.2s ease;
+        h1, h2, h3 { letter-spacing: -0.04em; }
+        p, span, a, li { letter-spacing: -0.011em; }
+        
+        @keyframes appleFadeUp { 
+            from { opacity: 0; transform: translateY(20px); } 
+            to { opacity: 1; transform: translateY(0); } 
         }
-        .nav-link:hover::after { transform: scaleX(1); }
-
-        .divider-gradient {
-            border: none;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.07) 30%, rgba(255,255,255,0.07) 70%, transparent);
-            margin: 0;
+        .animate-fade-up { 
+            opacity: 0; 
+            animation: appleFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
         }
-
-        /* Sidebar sticky TOC */
-        .toc-link {
-            display: block;
-            font-size: 12px;
-            color: #737373;
-            padding: 3px 0 3px 10px;
-            border-left: 1px solid transparent;
-            transition: color 0.15s ease, border-color 0.15s ease;
-            text-decoration: none;
-            line-height: 1.5;
-        }
-        .toc-link:hover {
-            color: #d4d4d4;
-            border-left-color: #404040;
-        }
-        .toc-link.active {
-            color: #f5f5f7;
-            border-left-color: #0071e3;
-        }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(10px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        .fade-up { animation: fadeUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) both; }
-        .delay-1 { animation-delay: 0.05s; }
-        .delay-2 { animation-delay: 0.12s; }
-        @media (prefers-reduced-motion: reduce) { .fade-up { animation: none; } }
+        .delay-1 { animation-delay: 100ms; }
+        .delay-2 { animation-delay: 250ms; }
+        .delay-3 { animation-delay: 400ms; }
     </style>
 </head>
-<body class="min-h-screen w-full bg-[#0a0a0b] text-[#f5f5f7] flex flex-col justify-between overflow-x-hidden antialiased selection:bg-neutral-800">
+<body class="min-h-screen w-full text-[#f5f5f7] flex flex-col justify-between overflow-x-hidden selection:bg-blue-600 selection:text-white">
 
-    <!-- ── Navigation ── -->
-    <nav class="w-full bg-[#0a0a0b]/70 backdrop-blur-xl border-b border-white/[0.05] sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto px-6 h-12 flex items-center justify-between">
-            <a href="/" class="font-semibold text-white tracking-[-0.04em] text-[15px] flex items-baseline select-none hover:opacity-75 transition-opacity duration-200">
-                <span>sake</span><span class="text-neutral-600 font-light">.host</span>
-            </a>
-            <a href="/" class="nav-link text-[13px] font-medium tracking-tight text-neutral-400 hover:text-white transition-colors duration-200">
-                Back to Home
-            </a>
+    <!-- Premium Minimal Navigation -->
+    <nav class="w-full bg-[#000000]/70 backdrop-blur-md border-b border-white/[0.04] sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
+            <div class="font-semibold text-white tracking-[-0.05em] text-[16px] flex items-baseline select-none">
+                <span>sake</span><span class="text-neutral-500 font-light">.host</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="#performance" class="text-[12px] text-neutral-400 hover:text-white transition-colors duration-200">Performance</a>
+                <a href="#architecture" class="text-[12px] text-neutral-400 hover:text-white transition-colors duration-200">Architecture</a>
+                <a href="https://discord.gg/Nr4NWMqtDb" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-3 py-1 bg-white text-black text-[12px] font-medium rounded-full hover:bg-neutral-200 transition-colors duration-150">Reserve</a>
+            </div>
         </div>
     </nav>
 
-    <!-- ── Page layout ── -->
-    <div class="w-full max-w-5xl mx-auto px-6 flex-1 py-14 sm:py-20 flex gap-16 items-start">
+    <!-- Main Hero Container -->
+    <div class="w-full max-w-4xl mx-auto px-6 flex-1 flex flex-col pt-20 pb-32">
+        
+        <!-- Hero Section -->
+        <header class="text-center space-y-6 max-w-2xl mx-auto mb-32">
+            <h1 class="animate-fade-up delay-1 text-[44px] sm:text-[64px] font-semibold tracking-[-0.045em] leading-[1.08] text-white">
+                Performance.<br />Uncompromised.
+            </h1>
+            <p class="animate-fade-up delay-2 text-neutral-400 text-base sm:text-[19px] font-normal leading-relaxed max-w-lg mx-auto">
+                While others race to be the cheapest, we engineer for the few who demand absolute, unthrottled single-thread power.
+            </p>
+            <div class="animate-fade-up delay-3 pt-4">
+                <a href="https://discord.gg/Nr4NWMqtDb" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-2.5 bg-[#0071e3] text-white text-[14px] font-medium rounded-full hover:bg-[#147ce5] transition-all duration-150">
+                    Join the Private Launch
+                </a>
+            </div>
+        </header>
 
-        <!-- ── Sidebar TOC (desktop only) ── -->
-        <aside class="hidden lg:block w-48 shrink-0 sticky top-20">
-            <p class="text-[10px] font-mono tracking-widest uppercase text-neutral-600 mb-3">Contents</p>
-            <nav class="space-y-0.5" id="toc">
-                <a href="#s1" class="toc-link">1. Acceptance</a>
-                <a href="#s2" class="toc-link">2. Resource Use</a>
-                <a href="#s3" class="toc-link">3. Network & DDoS</a>
-                <a href="#s4" class="toc-link">4. Billing & Data</a>
-                <a href="#s5" class="toc-link">5. Disputes & Fraud</a>
-                <a href="#s6" class="toc-link">6. Prohibited Use</a>
-                <a href="#s7" class="toc-link">7. Liability</a>
-                <a href="#s8" class="toc-link">8. Modifications</a>
-                <a href="#s9" class="toc-link">9. Governing Law</a>
-            </nav>
-        </aside>
-
-        <!-- ── Main content ── -->
-        <main class="flex-1 min-w-0 space-y-12">
-
-            <!-- Header -->
-            <header class="fade-up delay-1 space-y-4 pb-8 border-b border-white/[0.06]">
-                <p class="text-[11px] font-mono tracking-widest uppercase text-neutral-600">Legal</p>
-                <h1 class="text-3xl sm:text-4xl font-semibold text-white">Terms of Service</h1>
-                <p class="text-neutral-500 text-sm">Last updated: June 2026 &nbsp;·&nbsp; Effective immediately upon account creation or service use.</p>
-            </header>
-
-            <div class="fade-up delay-2 space-y-10 text-[14px] text-neutral-400 font-normal">
-
-                <!-- Intro blurb -->
-                <p class="text-neutral-300 leading-relaxed border-l-2 border-[#0071e3]/40 pl-4 text-[13px]">
-                    Please read these terms carefully before using Sake's services. By using our platform you agree to be bound by them. If you disagree with any part, do not use our services.
+        <!-- Product Philosophy -->
+        <section id="performance" class="grid grid-cols-1 md:grid-cols-2 gap-12 py-16 border-t border-white/[0.06]">
+            <div class="space-y-3">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-neutral-500">The Sake Philosophy</h2>
+                <p class="text-xl sm:text-2xl font-medium text-white tracking-tight leading-snug">
+                    We don’t crowd servers.<br />We dedicate them.
                 </p>
+            </div>
+            <div class="text-neutral-400 text-sm sm:text-[15px] leading-relaxed space-y-4">
+                <p>
+                    The hosting market is flooded with budget providers carving single machines into hundreds of unstable environments to squeeze out a profit. The result is erratic tick rates, hidden memory throttling, and administrative headaches.
+                </p>
+                <p>
+                    Sake changes the equation. By employing strictly high-tier, un-shared compute instances paired with highly-optimized network routing, your world operates exactly as intended. It doesn’t just run fast—it just works.
+                </p>
+            </div>
+        </section>
 
-                <!-- 1 -->
-                <section id="s1" class="space-y-3 scroll-mt-20">
-                    <h2 class="text-base font-semibold text-white">1. Acceptance of Terms</h2>
-                    <p>These Terms of Service ("Terms") form a binding agreement between you and Sake Digital ("Sake", "we", "us", or "our"). They apply to anyone who accesses sake.host, joins our Discord community, or purchases or uses any hosting environment we provide.</p>
-                    <p>By using our services you confirm that you are at least 18 years old (or have the consent of a parent or legal guardian), and that you have the legal capacity to enter into this agreement.</p>
-                </section>
+        <!-- The Architecture Grid -->
+        <section id="architecture" class="mt-16 space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                
+                <!-- Premium Tier -->
+                <div class="bg-[#111112] border border-white/[0.04] rounded-3xl p-8 flex flex-col justify-between min-h-[260px]">
+                    <div class="space-y-2">
+                        <div class="text-[11px] font-medium tracking-widest text-neutral-500 uppercase">01 / Edition</div>
+                        <h3 class="text-lg font-medium text-white">Premium</h3>
+                        <p class="text-neutral-400 text-xs leading-relaxed">
+                            Engineered for high-demand multiplayer setups and heavy modpack infrastructure. Powered by industry-leading high-clock compute architecture.
+                        </p>
+                    </div>
+                    <div class="text-[13px] font-mono text-neutral-400 pt-6">
+                        $6.00 <span class="text-neutral-600">AUD / GB</span>
+                    </div>
+                </div>
 
-                <hr class="divider-gradient" />
+                <!-- Bare Metal Tier -->
+                <div class="bg-[#111112] border border-white/[0.04] rounded-3xl p-8 flex flex-col justify-between min-h-[260px]">
+                    <div class="space-y-2">
+                        <div class="text-[11px] font-medium tracking-widest text-neutral-500 uppercase">02 / Architecture</div>
+                        <h3 class="text-lg font-medium text-white">Isolated Metal</h3>
+                        <p class="text-neutral-400 text-xs leading-relaxed">
+                            Complete architectural independence. Your own private system with zero virtualization overhead and no neighboring resource drain.
+                        </p>
+                    </div>
+                    <div class="text-[13px] font-mono text-neutral-400 pt-6">
+                        Custom Provisioned
+                    </div>
+                </div>
 
-                <!-- 2 -->
-                <section id="s2" class="space-y-3 scroll-mt-20">
-                    <h2 class="text-base font-semibold text-white">2. Resource Allocations & Fair Use</h2>
-                    <p>Each plan includes a dedicated RAM allocation and storage quota as listed at the time of purchase. Compute resources are provided on shared hardware nodes unless you have purchased a Bare Metal plan.</p>
-                    <p>You agree not to run processes that place sustained, excessive demand on shared CPU, disk I/O, or network throughput in a way that degrades service for other customers on the same node. Common causes include unoptimised modpacks, infinite script loops, or cryptocurrency mining. Where such behaviour is detected, we may throttle, suspend, or migrate your instance after attempting to notify you. Persistent offences may result in service termination without refund.</p>
-                </section>
-
-                <hr class="divider-gradient" />
-
-                <!-- 3 -->
-                <section id="s3" class="space-y-3 scroll-mt-20">
-                    <h2 class="text-base font-semibold text-white">3. Network Operations & DDoS Mitigation</h2>
-                    <p>We operate game-aware DDoS filtering across our entire network. While our mitigation systems are designed to handle the vast majority of attacks without service interruption, we cannot guarantee 100% uptime during attacks of an unprecedented scale or type.</p>
-                    <p>If your instance becomes the sustained target of traffic that threatens the stability of our broader network, we reserve the right to null-route or isolate that instance until the attack subsides. We will notify you as soon as practically possible when this occurs.</p>
-                    <p>You must not use our infrastructure to launch, coordinate, or amplify attacks against any third party. Doing so will result in immediate termination and may be reported to relevant authorities.</p>
-                </section>
-
-                <hr class="divider-gradient" />
-
-                <!-- 4 -->
-                <section id="s4" class="space-y-3 scroll-mt-20">
-                    <h2 class="text-base font-semibold text-white">4. Billing, Suspension & Data Retention</h2>
-                    <p>Services are billed on a recurring subscription cycle. An invoice is issued automatically before each renewal date. Payment is due by the date shown on your invoice.</p>
-                    <p>If payment is not received by the due date, your service will be suspended. Suspended instances and all associated data — including world files, configurations, and backups stored on our infrastructure — will be permanently deleted <strong class="text-neutral-300 font-medium">7 days</strong> after the initial suspension date. We are not responsible for data lost due to non-payment.</p>
-                    <p>You are solely responsible for maintaining your own off-site backups. We strongly recommend exporting snapshots regularly.</p>
-                </section>
-
-                <hr class="divider-gradient" />
-
-                <!-- 5 -->
-                <section id="s5" class="space-y-3 scroll-mt-20">
-                    <h2 class="text-base font-semibold text-white">5. Billing Disputes & Fraud</h2>
-                    <p>All payments are processed through Stripe or PayPal. If you believe a charge is incorrect, contact our support team before initiating a dispute with your bank or payment provider. We will investigate and resolve legitimate billing issues promptly.</p>
-                    <p>Initiating a fraudulent chargeback or payment reversal — one where the charge was valid and the service was delivered — will result in the immediate suspension of all your active services, permanent account termination, and recovery of any outstanding amounts through available legal means.</p>
-                </section>
-
-                <hr class="divider-gradient" />
-
-                <!-- 6 -->
-                <section id="s6" class="space-y-3 scroll-mt-20">
-                    <h2 class="text-base font-semibold text-white">6. Prohibited Use</h2>
-                    <p>You may not use Sake's infrastructure for any of the following:</p>
-                    <ul class="space-y-2 pl-4 list-none">
-                        <li class="flex gap-2.5"><span class="text-neutral-600 shrink-0 mt-0.5">▪</span><span>Hosting, distributing, or storing illegal content of any kind</span></li>
-                        <li class="flex gap-2.5"><span class="text-neutral-600 shrink-0 mt-0.5">▪</span><span>Launching denial-of-service attacks, spam campaigns, or network intrusion attempts</span></li>
-                        <li class="flex gap-2.5"><span class="text-neutral-600 shrink-0 mt-0.5">▪</span><span>Cryptocurrency mining or any activity not related to game server hosting</span></li>
-                        <li class="flex gap-2.5"><span class="text-neutral-600 shrink-0 mt-0.5">▪</span><span>Reselling or subletting your allocated resources without prior written consent from Sake</span></li>
-                        <li class="flex gap-2.5"><span class="text-neutral-600 shrink-0 mt-0.5">▪</span><span>Any activity that violates applicable Australian or international law</span></li>
-                    </ul>
-                    <p>Violation of this section may result in immediate termination without refund and, where applicable, reporting to relevant law enforcement.</p>
-                </section>
-
-                <hr class="divider-gradient" />
-
-                <!-- 7 -->
-                <section id="s7" class="space-y-3 scroll-mt-20">
-                    <h2 class="text-base font-semibold text-white">7. Limitation of Liability</h2>
-                    <p>To the maximum extent permitted by Australian Consumer Law, Sake Digital and its operators are not liable for any indirect, incidental, special, or consequential damages arising from your use of our services. This includes, but is not limited to, loss of data, lost revenue, community disruption, or costs incurred from service downtime.</p>
-                    <p>Nothing in these Terms limits any rights you may have under the Australian Consumer Law that cannot lawfully be excluded.</p>
-                </section>
-
-                <hr class="divider-gradient" />
-
-                <!-- 8 -->
-                <section id="s8" class="space-y-3 scroll-mt-20">
-                    <h2 class="text-base font-semibold text-white">8. Modifications to These Terms</h2>
-                    <p>We may update these Terms from time to time. When we do, we will revise the "Last updated" date at the top of this page and, where the changes are material, notify active customers via email or a notice in our Discord server.</p>
-                    <p>Continued use of our services after changes take effect constitutes your acceptance of the revised Terms.</p>
-                </section>
-
-                <hr class="divider-gradient" />
-
-                <!-- 9 -->
-                <section id="s9" class="space-y-3 scroll-mt-20">
-                    <h2 class="text-base font-semibold text-white">9. Governing Law</h2>
-                    <p>These Terms are governed by the laws of Australia. Any disputes arising under or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of Australia.</p>
-                    <p>If you have any questions about these Terms, please reach out to us through our <a href="https://discord.gg/Nr4NWMqtDb" target="_blank" rel="noopener noreferrer" class="text-[#0071e3] hover:text-blue-400 transition-colors duration-150">Discord server</a>.</p>
-                </section>
+                <!-- Hand-Crafted Routing Feature -->
+                <div class="bg-[#111112] border border-white/[0.04] rounded-3xl p-8 flex flex-col justify-between min-h-[260px]">
+                    <div class="space-y-2">
+                        <div class="text-[11px] font-medium tracking-widest text-neutral-500 uppercase">03 / Network</div>
+                        <h3 class="text-lg font-medium text-white">Pure Pathways</h3>
+                        <p class="text-neutral-400 text-xs leading-relaxed">
+                            Latency isn’t managed—it’s engineered out. We hand-select premium low-hop transit lanes to ensure instantaneous client-to-server responses.
+                        </p>
+                    </div>
+                    <div class="text-[13px] font-mono text-emerald-500/80 pt-6 flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Optimized Routing
+                    </div>
+                </div>
 
             </div>
-        </main>
+        </section>
+
     </div>
 
-    <!-- ── Footer ── -->
-    <footer class="w-full border-t border-white/[0.04] py-7 mt-auto">
-        <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] font-normal text-neutral-700">
-            <div class="flex flex-wrap justify-center sm:justify-start items-center gap-x-4 gap-y-1">
-                <span>© 2026 Sake Digital. All rights reserved.</span>
-                <span class="text-neutral-800 hidden sm:inline">·</span>
-                <a href="/terms.html" class="text-neutral-500 font-medium hover:text-neutral-400 transition-colors duration-200">Terms of Service</a>
-                <span class="text-neutral-800">·</span>
-                <a href="https://discord.gg/Nr4NWMqtDb" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-400 transition-colors duration-200">Discord</a>
+    <!-- Minimalist Footer -->
+    <footer class="w-full border-t border-white/[0.04] py-8 bg-[#000000]">
+        <div class="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[12px] text-neutral-600">
+            <div class="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
+                <span>© 2026 Sake Digital.</span>
+                <a href="https://discord.gg/Nr4NWMqtDb" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-400 transition-colors duration-150">Discord Lounge</a>
+                <span class="text-neutral-800 select-none">|</span>
+                <a href="terms.html" class="hover:text-neutral-400 transition-colors duration-150">Terms of Service</a>
             </div>
-            <div class="font-mono tracking-widest text-neutral-800 uppercase text-[10px]">
+            <div class="tracking-widest uppercase text-[10px] text-neutral-700 font-mono">
                 Engineered in Australia
             </div>
         </div>
     </footer>
-
-    <!-- TOC active state scroll tracking -->
-    <script>
-        const sections = document.querySelectorAll('section[id]');
-        const tocLinks = document.querySelectorAll('.toc-link');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    tocLinks.forEach(l => l.classList.remove('active'));
-                    const active = document.querySelector(`.toc-link[href="#${entry.target.id}"]`);
-                    if (active) active.classList.add('active');
-                }
-            });
-        }, { rootMargin: '-20% 0px -70% 0px' });
-        sections.forEach(s => observer.observe(s));
-    </script>
-
 </body>
 </html>
