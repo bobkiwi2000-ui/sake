@@ -37,6 +37,12 @@
 
         <main class="space-y-8 text-sm leading-relaxed text-neutral-400 font-normal">
             
+            <!-- Jurisdiction Badges -->
+            <div class="flex flex-wrap gap-2 justify-center">
+                <span class="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 text-[10px] font-mono">🇦🇺 Australian Privacy Act</span>
+                <span class="px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-300 text-[10px] font-mono">🇸🇬 Singapore PDPA</span>
+            </div>
+
             <div class="bg-blue-500/5 border border-blue-500/20 rounded-xl p-3 text-center">
                 <p class="text-blue-300 text-xs">🔒 We collect minimal data. Your server content is yours alone.</p>
             </div>
@@ -67,7 +73,7 @@
                 <h2 class="text-xl font-medium text-white tracking-tight">3. Third-Party Services</h2>
                 <p>We rely on trusted partners to deliver our service:</p>
                 <ul class="list-disc list-inside space-y-1 ml-2">
-                    <li><strong>Vultr / Oracle Cloud</strong> — Infrastructure providers (servers are in Sydney, Singapore)</li>
+                    <li><strong>Vultr / Oracle Cloud</strong> — Infrastructure providers (servers in Sydney, Singapore)</li>
                     <li><strong>Stripe / PayPal</strong> — Payment processing (we never store card details)</li>
                     <li><strong>Discord</strong> — Community and support</li>
                 </ul>
@@ -84,13 +90,42 @@
                 </ul>
             </section>
 
+            <!-- Singapore PDPA Section (NEW) -->
+            <section class="space-y-3 bg-[#111112] p-5 rounded-xl border border-white/[0.05]">
+                <h2 class="text-xl font-medium text-white tracking-tight flex items-center gap-2">
+                    <span>🇸🇬</span> Singapore PDPA Compliance
+                </h2>
+                <p>For customers in Singapore, Sake Digital complies with the <strong>Personal Data Protection Act 2012 (PDPA)</strong>. Under the PDPA, you have the following rights:</p>
+                <ul class="list-disc list-inside space-y-1 ml-2">
+                    <li><strong>Access:</strong> Request a copy of your personal data we hold</li>
+                    <li><strong>Correction:</strong> Request correction of inaccurate or incomplete data</li>
+                    <li><strong>Withdrawal:</strong> Withdraw consent for data processing (may affect service delivery)</li>
+                    <li><strong>Deletion:</strong> Request deletion of your personal data (subject to legal retention requirements)</li>
+                </ul>
+                <p class="mt-2 text-neutral-300 text-xs">We do not use automated decision-making or profiling that significantly affects you.</p>
+                <div class="mt-3 pt-3 border-t border-white/[0.05] text-xs">
+                    <p class="text-neutral-400"><span class="text-white font-medium">Data Protection Officer (DPO):</span> Contact via Discord (preferred) or email dpo@sake.host (coming soon)</p>
+                    <p class="text-neutral-500 mt-1">Response time for PDPA requests: within 30 days.</p>
+                </div>
+            </section>
+
+            <!-- Spam Control Act (Singapore) -->
+            <section class="space-y-3">
+                <h2 class="text-xl font-medium text-white tracking-tight flex items-center gap-2">
+                    <span>📧</span> Spam Control Act (Singapore)
+                </h2>
+                <p>We comply with Singapore's Spam Control Act 2007. We will only send marketing emails to customers who have explicitly opted in. Every marketing email includes an unsubscribe link. We do not send bulk emails (>100 in 24 hours) or purchase email lists.</p>
+                <p class="text-neutral-500 text-xs">For questions about our email practices, contact our DPO.</p>
+            </section>
+
             <section class="space-y-3">
                 <h2 class="text-xl font-medium text-white tracking-tight">5. Your Rights (Australian Privacy Act)</h2>
-                <p>You have the right to:</p>
+                <p>Under the Australian Privacy Act 1988 (APP), you have the right to:</p>
                 <ul class="list-disc list-inside space-y-1 ml-2">
                     <li>Access all personal data we hold about you</li>
                     <li>Request correction of inaccurate data</li>
                     <li>Request deletion of your data (except where required by law)</li>
+                    <li>Make a complaint about privacy handling</li>
                 </ul>
                 <p class="mt-2">To exercise these rights, contact us via Discord.</p>
             </section>
@@ -101,17 +136,37 @@
             </section>
 
             <section class="space-y-3">
-                <h2 class="text-xl font-medium text-white tracking-tight">7. Changes to This Policy</h2>
+                <h2 class="text-xl font-medium text-white tracking-tight">7. International Data Transfers</h2>
+                <p>Your data may be stored on servers in:</p>
+                <ul class="list-disc list-inside space-y-1 ml-2">
+                    <li><strong>Australia</strong> — Sydney (protected by Australian Privacy Act)</li>
+                    <li><strong>Singapore</strong> — Singapore (protected by PDPA)</li>
+                </ul>
+                <p class="text-neutral-500 text-xs mt-1">Both jurisdictions provide adequate protection comparable to PDPA standards.</p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-xl font-medium text-white tracking-tight">8. Changes to This Policy</h2>
                 <p>We'll notify you of material changes via email or Discord at least 14 days in advance. Continued use after changes constitutes acceptance.</p>
             </section>
 
             <section class="space-y-3">
-                <h2 class="text-xl font-medium text-white tracking-tight">8. Contact</h2>
-                <p>Privacy questions? Reach out on <a href="https://discord.gg/Nr4NWMqtDb" class="text-[#0071e3] hover:underline">Discord</a>.</p>
+                <h2 class="text-xl font-medium text-white tracking-tight">9. Contact & Complaints</h2>
+                <p><strong>Data Protection Officer (DPO):</strong></p>
+                <ul class="list-disc list-inside space-y-1 ml-2">
+                    <li>Discord: <a href="https://discord.gg/Nr4NWMqtDb" class="text-[#0071e3] hover:underline">Join our Discord and DM @dpo</a></li>
+                    <li>Email: dpo@sake.host (coming soon)</li>
+                </ul>
+                <p class="mt-2"><strong>Complaints:</strong></p>
+                <ul class="list-disc list-inside space-y-1 ml-2">
+                    <li>🇦🇺 Australia: <a href="https://www.oaic.gov.au" class="text-[#0071e3] hover:underline">Office of the Australian Information Commissioner</a></li>
+                    <li>🇸🇬 Singapore: <a href="https://www.pdpc.gov.sg" class="text-[#0071e3] hover:underline">Personal Data Protection Commission</a></li>
+                </ul>
             </section>
 
             <div class="border-t border-white/[0.06] pt-6 mt-6 text-center text-neutral-600 text-xs">
-                <p>© 2026 Sake Digital — <span class="text-white">Australia</span></p>
+                <p>© 2026 Sake Digital — <span class="text-white">Australia & Singapore</span></p>
+                <p class="mt-1">Last reviewed: June 2026</p>
             </div>
         </main>
     </div>
@@ -123,7 +178,7 @@
                 <a href="terms.html" class="hover:text-neutral-400">Terms</a>
             </div>
             <div class="font-mono tracking-wider text-neutral-700 uppercase text-[10px]">
-                Engineered in Australia
+                🇦🇺 Engineered in Australia 🇸🇬
             </div>
         </div>
     </footer>

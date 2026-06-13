@@ -37,6 +37,12 @@
 
         <main class="space-y-8 text-sm leading-relaxed text-neutral-400 font-normal">
             
+            <!-- Jurisdiction Badges -->
+            <div class="flex flex-wrap gap-2 justify-center">
+                <span class="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 text-[10px] font-mono">🇦🇺 Australian Consumer Law</span>
+                <span class="px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-300 text-[10px] font-mono">🇸🇬 Singapore Consumer Protection (Fair Trading) Act</span>
+            </div>
+
             <div class="bg-yellow-500/10 border border-yellow-500/20 rounded-xl p-4 text-center">
                 <p class="text-yellow-300 text-xs font-mono mb-1">⚠️ IMPORTANT</p>
                 <p class="text-neutral-300 text-xs">Sake is currently in pre-launch beta. These terms apply to all services when launched.</p>
@@ -48,8 +54,9 @@
                 <p class="text-neutral-500 text-xs mt-2">We are not affiliated with Mojang Studios or Microsoft Corporation.</p>
             </section>
 
+            <!-- Refund Policy (Australia + Singapore compliant) -->
             <section class="space-y-3">
-                <h2 class="text-xl font-medium text-white tracking-tight">2. Refund Policy (Australian Consumer Law Compliant)</h2>
+                <h2 class="text-xl font-medium text-white tracking-tight">2. Refund Policy</h2>
                 <div class="space-y-2 bg-[#111112] p-4 rounded-xl border border-white/[0.05]">
                     <p class="text-white text-sm font-medium">✅ 7-Day Money-Back Guarantee</p>
                     <p class="text-xs">If you're unhappy for any reason within the first 7 days of service, we'll issue a full refund to your original payment method. No questions asked.</p>
@@ -60,16 +67,32 @@
                     <p class="text-white text-sm font-medium mt-3">❌ Non-Refundable Situations</p>
                     <p class="text-xs">We do not offer refunds or credits for: DDoS attacks, Minecraft software bugs, user-caused world corruption, or issues caused by third-party mods/plugins.</p>
                 </div>
-                <p class="text-neutral-500 text-xs italic mt-2">These refund terms comply with the Australian Consumer Law and cannot be waived.</p>
+                <p class="text-neutral-500 text-xs italic mt-2">These refund terms comply with the Australian Consumer Law and Singapore's Consumer Protection (Fair Trading) Act.</p>
+            </section>
+
+            <!-- Singapore Consumer Protection Act (NEW) -->
+            <section class="space-y-3 bg-[#111112] p-5 rounded-xl border border-white/[0.05]">
+                <h2 class="text-xl font-medium text-white tracking-tight flex items-center gap-2">
+                    <span>🇸🇬</span> Singapore Consumer Protection (Fair Trading) Act
+                </h2>
+                <p>For customers in Singapore, the <strong>Consumer Protection (Fair Trading) Act (CPFTA)</strong> applies. We affirm that:</p>
+                <ul class="list-disc list-inside space-y-1 ml-2">
+                    <li>We do not engage in false, misleading, or deceptive conduct</li>
+                    <li>We do not make false claims about our service capabilities</li>
+                    <li>We do not take advantage of consumers' inability to protect their interests</li>
+                    <li>We do not include hidden fees or unfair contract terms</li>
+                    <li>All service descriptions are accurate and truthful</li>
+                </ul>
+                <p class="mt-2 text-neutral-300 text-xs">Under the CPFTA, consumers may seek remedies for unfair practices. Our 7-day refund policy exceeds minimum requirements. If you believe we have engaged in an unfair practice, please contact us immediately via Discord.</p>
             </section>
 
             <section class="space-y-3">
                 <h2 class="text-xl font-medium text-white tracking-tight">3. Fair Use & Prohibited Content</h2>
                 <p>You agree not to use Sake services for:</p>
-                <ul class="list-disc list-inside space-y-1 ml-2 text-neutral-400">
-                    <li>Illegal activity under Australian or local law</li>
+                <ul class="list-disc list-inside space-y-1 ml-2">
+                    <li>Illegal activity under Australian, Singaporean, or local law</li>
                     <li>Malicious software, bots, or network attacks</li>
-                    <li>Copyright-infringing content</li>
+                    <li>Copyright-infringing content (including unauthorized Minecraft mod redistribution)</li>
                     <li>Anything that damages Sake's infrastructure or reputation</li>
                 </ul>
                 <p class="text-neutral-500 text-xs mt-2">Violation may result in immediate termination without refund.</p>
@@ -83,11 +106,12 @@
 
             <section class="space-y-3">
                 <h2 class="text-xl font-medium text-white tracking-tight">5. Limitation of Liability</h2>
-                <p>To the maximum extent permitted by Australian law:</p>
+                <p>To the maximum extent permitted by Australian and Singaporean law:</p>
                 <ul class="list-disc list-inside space-y-1 ml-2">
                     <li>Sake is not liable for loss of data, profits, or gameplay progress</li>
                     <li>Our total liability is capped at the amount you paid in the previous 3 months</li>
                     <li>We are not responsible for Minecraft account bans or Mojang policy changes</li>
+                    <li>We are not responsible for third-party provider outages (Vultr, Oracle, etc.)</li>
                 </ul>
             </section>
 
@@ -103,23 +127,46 @@
             </section>
 
             <section class="space-y-3">
-                <h2 class="text-xl font-medium text-white tracking-tight">7. Changes to Terms</h2>
+                <h2 class="text-xl font-medium text-white tracking-tight">7. Dispute Resolution</h2>
+                <p>We encourage informal resolution first via Discord. If unresolved:</p>
+                <ul class="list-disc list-inside space-y-1 ml-2">
+                    <li><strong>Australian customers:</strong> Disputes governed by laws of New South Wales, Australia</li>
+                    <li><strong>Singapore customers:</strong> Disputes governed by laws of Singapore</li>
+                    <li><strong>Other regions:</strong> Governed by Australian law</li>
+                </ul>
+                <p class="text-neutral-500 text-xs mt-1">Small claims courts in your jurisdiction are available for disputes under $10,000 AUD/SGD.</p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-xl font-medium text-white tracking-tight">8. Changes to Terms</h2>
                 <p>We may update these Terms at any time. Continued use of the Service after changes constitutes acceptance. For material changes, we'll notify you via email or Discord 14 days in advance.</p>
             </section>
 
             <section class="space-y-3">
-                <h2 class="text-xl font-medium text-white tracking-tight">8. Governing Law</h2>
-                <p>These Terms are governed by the laws of <span class="text-white">New South Wales, Australia</span>. Any disputes shall be resolved in the courts of Sydney, Australia.</p>
+                <h2 class="text-xl font-medium text-white tracking-tight">9. Governing Law</h2>
+                <p>These Terms are governed by:</p>
+                <ul class="list-disc list-inside space-y-1 ml-2">
+                    <li><strong>For Australian customers:</strong> Laws of New South Wales, Australia</li>
+                    <li><strong>For Singapore customers:</strong> Laws of Singapore</li>
+                    <li><strong>For all other customers:</strong> Laws of New South Wales, Australia</li>
+                </ul>
+                <p class="mt-2">Any disputes shall be resolved in the courts of Sydney, Australia, or Singapore, depending on your location.</p>
             </section>
 
             <section class="space-y-3">
-                <h2 class="text-xl font-medium text-white tracking-tight">9. Contact</h2>
-                <p>For legal inquiries: <a href="https://discord.gg/Nr4NWMqtDb" class="text-[#0071e3] hover:underline">Discord (preferred)</a> or email coming soon.</p>
+                <h2 class="text-xl font-medium text-white tracking-tight">10. Contact</h2>
+                <p>For legal inquiries:</p>
+                <ul class="list-disc list-inside space-y-1 ml-2">
+                    <li>Discord (preferred): <a href="https://discord.gg/Nr4NWMqtDb" class="text-[#0071e3] hover:underline">Join our server</a></li>
+                    <li>Email: legal@sake.host (coming soon)</li>
+                    <li>Data Protection Officer: dpo@sake.host</li>
+                </ul>
             </section>
 
             <div class="border-t border-white/[0.06] pt-6 mt-6 text-center text-neutral-600 text-xs">
                 <p>By using Sake services, you acknowledge that you have read, understood, and agree to these Terms of Service.</p>
-                <p class="mt-2">© 2026 Sake Digital — Built in Australia</p>
+                <p class="mt-2">© 2026 Sake Digital — Built in Australia | Serving Singapore</p>
+                <p class="mt-1 text-neutral-700">Last reviewed: June 2026</p>
             </div>
         </main>
     </div>
@@ -131,7 +178,7 @@
                 <a href="privacy.html" class="hover:text-neutral-400">Privacy</a>
             </div>
             <div class="font-mono tracking-wider text-neutral-700 uppercase text-[10px]">
-                Engineered in Australia
+                🇦🇺 Australia • 🇸🇬 Singapore
             </div>
         </div>
     </footer>
