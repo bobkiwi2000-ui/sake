@@ -10,11 +10,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; }
+        
+        /* Absolute Layout Framework - Guarantees structural visibility */
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-h: 100vh;
+            background-color: #000000;
+        }
         body { 
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
             -webkit-font-smoothing: antialiased; 
-            background-color: #000000;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
+        
         h1, h2, h3 { letter-spacing: -0.04em; }
         p, span, a, li { letter-spacing: -0.011em; }
         
@@ -31,7 +42,7 @@
         .delay-3 { animation-delay: 400ms; }
     </style>
 </head>
-<body class="min-h-screen w-full text-[#f5f5f7] flex flex-col justify-between bg-black">
+<body class="text-[#f5f5f7] overflow-x-hidden selection:bg-blue-600 selection:text-white">
 
     <!-- Premium Minimal Navigation -->
     <nav class="w-full bg-[#000000]/70 backdrop-blur-md border-b border-white/[0.04] sticky top-0 z-50">
@@ -102,7 +113,7 @@
                 </div>
 
                 <!-- Bare Metal Tier -->
-                <div class="bg-[#111112] border border-white/[0.04] rounded-3xl p-8 flex flex-col justify-between min-h-[260px]">
+                <div class="bg-[#111112] border border-white/[0.04] rounded-3xl p-8 flex flex-col justify-between min-h-[240px]">
                     <div class="space-y-2">
                         <div class="text-[11px] font-medium tracking-widest text-neutral-500 uppercase">02 / Architecture</div>
                         <h3 class="text-lg font-medium text-white">Isolated Metal</h3>
@@ -134,16 +145,16 @@
 
     </div>
 
-    <!-- Layout Fixed Footer -->
-    <footer class="w-full border-t border-white/[0.04] py-8 bg-[#000000]">
-        <div class="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[12px] text-neutral-500">
+    <!-- Final Verified Footer Element -->
+    <footer class="w-full border-t border-white/[0.04] py-8 bg-[#000000] mt-auto">
+        <div class="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[12px]">
             <div class="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
                 <span class="text-neutral-600">© 2026 Sake Digital.</span>
                 <a href="https://discord.gg/Nr4NWMqtDb" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-white transition-colors duration-150">Discord Lounge</a>
                 <span class="text-neutral-700 select-none">·</span>
-                <a href="terms.html" class="text-neutral-400 hover:text-white transition-colors duration-150 font-normal">Terms of Service</a>
+                <a href="terms.html" class="text-neutral-400 hover:text-white transition-colors duration-150">Terms of Service</a>
             </div>
-            <div class="tracking-widest uppercase text-[10px] text-neutral-700 font-mono">
+            <div class="tracking-widest uppercase text-[10px] text-neutral-700 font-mono select-none">
                 Engineered in Australia
             </div>
         </div>
