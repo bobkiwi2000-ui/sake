@@ -1,160 +1,136 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Sake — Pure Performance Hosting.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — Sake</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        *, *::before, *::after { box-sizing: border-box; }
-        
-        /* Absolute Layout Framework - Guarantees structural visibility */
-        html, body {
-            margin: 0;
-            padding: 0;
-            min-h: 100vh;
-            background-color: #000000;
-        }
         body { 
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
-            -webkit-font-smoothing: antialiased; 
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            letter-spacing: -0.022em;
+            -webkit-font-smoothing: antialiased;
         }
-        
-        h1, h2, h3 { letter-spacing: -0.04em; }
-        p, span, a, li { letter-spacing: -0.011em; }
-        
-        @keyframes appleFadeUp { 
-            from { opacity: 0; transform: translateY(20px); } 
-            to { opacity: 1; transform: translateY(0); } 
-        }
-        .animate-fade-up { 
-            opacity: 0; 
-            animation: appleFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
-        }
-        .delay-1 { animation-delay: 100ms; }
-        .delay-2 { animation-delay: 250ms; }
-        .delay-3 { animation-delay: 400ms; }
     </style>
 </head>
-<body class="text-[#f5f5f7] overflow-x-hidden selection:bg-blue-600 selection:text-white">
+<body class="min-h-screen bg-[#000000] text-[#f5f5f7] flex flex-col selection:bg-neutral-800">
 
-    <!-- Premium Minimal Navigation -->
-    <nav class="w-full bg-[#000000]/70 backdrop-blur-md border-b border-white/[0.04] sticky top-0 z-50">
-        <div class="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
-            <div class="font-semibold text-white tracking-[-0.05em] text-[16px] flex items-baseline select-none">
-                <span>sake</span><span class="text-neutral-500 font-light">.host</span>
-            </div>
-            <div class="flex items-center gap-6">
-                <a href="#performance" class="text-[12px] text-neutral-400 hover:text-white transition-colors duration-200">Performance</a>
-                <a href="#architecture" class="text-[12px] text-neutral-400 hover:text-white transition-colors duration-200">Architecture</a>
-                <a href="https://discord.gg/Nr4NWMqtDb" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-3 py-1 bg-white text-black text-[12px] font-medium rounded-full hover:bg-neutral-200 transition-colors duration-150">Reserve</a>
-            </div>
+    <nav class="w-full bg-[#161617]/40 backdrop-blur-md border-b border-white/[0.04] sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-12 flex items-center justify-between text-[12px] text-neutral-400">
+            <a href="/" class="font-semibold text-white tracking-[-0.03em] text-[15px] flex items-baseline select-none hover:opacity-80">
+                <span>sake</span><span class="text-neutral-500 font-normal">.host</span>
+            </a>
+            <a href="/" class="hover:text-white transition-colors duration-200 text-[13px] tracking-tight">← Back</a>
         </div>
     </nav>
 
-    <!-- Main Content Container -->
-    <div class="w-full max-w-4xl mx-auto px-6 flex-1 flex flex-col pt-16 pb-20">
+    <div class="w-full max-w-3xl mx-auto px-6 flex-1 py-16 sm:py-24 space-y-10">
         
-        <!-- Hero Section -->
-        <header class="text-center space-y-6 max-w-2xl mx-auto mb-24">
-            <h1 class="animate-fade-up delay-1 text-[44px] sm:text-[64px] font-semibold tracking-[-0.045em] leading-[1.08] text-white">
-                Performance.<br />Uncompromised.
-            </h1>
-            <p class="animate-fade-up delay-2 text-neutral-400 text-base sm:text-[19px] font-normal leading-relaxed max-w-lg mx-auto">
-                While others race to be the cheapest, we engineer for the few who demand absolute, unthrottled single-thread power.
-            </p>
-            <div class="animate-fade-up delay-3 pt-4">
-                <a href="https://discord.gg/Nr4NWMqtDb" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-2.5 bg-[#0071e3] text-white text-[14px] font-medium rounded-full hover:bg-[#147ce5] transition-all duration-150">
-                    Join the Private Launch
-                </a>
-            </div>
+        <header class="space-y-3 border-b border-white/[0.06] pb-6">
+            <p class="text-[13px] font-medium text-[#0071e3] tracking-wide font-mono">Legal Agreement</p>
+            <h1 class="text-4xl font-semibold tracking-[-0.03em] text-white">Terms of Service</h1>
+            <p class="text-neutral-500 text-sm">Last updated: June 2026 • Effective immediately</p>
         </header>
 
-        <!-- Product Philosophy -->
-        <section id="performance" class="grid grid-cols-1 md:grid-cols-2 gap-12 py-12 border-t border-white/[0.06]">
-            <div class="space-y-3">
-                <h2 class="text-xs font-semibold uppercase tracking-widest text-neutral-500">The Sake Philosophy</h2>
-                <p class="text-xl sm:text-2xl font-medium text-white tracking-tight leading-snug">
-                    We don’t crowd servers.<br />We dedicate them.
-                </p>
+        <main class="space-y-8 text-sm leading-relaxed text-neutral-400 font-normal">
+            
+            <div class="bg-yellow-500/10 border border-yellow-500/20 rounded-xl p-4 text-center">
+                <p class="text-yellow-300 text-xs font-mono mb-1">⚠️ IMPORTANT</p>
+                <p class="text-neutral-300 text-xs">Sake is currently in pre-launch beta. These terms apply to all services when launched.</p>
             </div>
-            <div class="text-neutral-400 text-sm sm:text-[15px] leading-relaxed space-y-4">
-                <p>
-                    The hosting market is flooded with budget providers carving single machines into hundreds of unstable environments to squeeze out a profit. The result is erratic tick rates, hidden memory throttling, and administrative headaches.
-                </p>
-                <p>
-                    Sake changes the equation. By employing strictly high-tier, un-shared compute instances paired with highly-optimized network routing, your world operates exactly as intended. It doesn’t just run fast—it just works.
-                </p>
+
+            <section class="space-y-3">
+                <h2 class="text-xl font-medium text-white tracking-tight">1. Our Service</h2>
+                <p>Sake Digital provides Minecraft server hosting ("the Service") using third-party infrastructure providers (including but not limited to Vultr Holdings Corporation and Oracle Cloud). We resell computing resources with managed configuration and support.</p>
+                <p class="text-neutral-500 text-xs mt-2">We are not affiliated with Mojang Studios or Microsoft Corporation.</p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-xl font-medium text-white tracking-tight">2. Refund Policy (Australian Consumer Law Compliant)</h2>
+                <div class="space-y-2 bg-[#111112] p-4 rounded-xl border border-white/[0.05]">
+                    <p class="text-white text-sm font-medium">✅ 7-Day Money-Back Guarantee</p>
+                    <p class="text-xs">If you're unhappy for any reason within the first 7 days of service, we'll issue a full refund to your original payment method. No questions asked.</p>
+                    
+                    <p class="text-white text-sm font-medium mt-3">🔄 After 7 Days</p>
+                    <p class="text-xs">Refunds are not available after 7 days. However, we offer <span class="text-emerald-400">service credits</span> for verified downtime exceeding our 99.9% uptime target.</p>
+                    
+                    <p class="text-white text-sm font-medium mt-3">❌ Non-Refundable Situations</p>
+                    <p class="text-xs">We do not offer refunds or credits for: DDoS attacks, Minecraft software bugs, user-caused world corruption, or issues caused by third-party mods/plugins.</p>
+                </div>
+                <p class="text-neutral-500 text-xs italic mt-2">These refund terms comply with the Australian Consumer Law and cannot be waived.</p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-xl font-medium text-white tracking-tight">3. Fair Use & Prohibited Content</h2>
+                <p>You agree not to use Sake services for:</p>
+                <ul class="list-disc list-inside space-y-1 ml-2 text-neutral-400">
+                    <li>Illegal activity under Australian or local law</li>
+                    <li>Malicious software, bots, or network attacks</li>
+                    <li>Copyright-infringing content</li>
+                    <li>Anything that damages Sake's infrastructure or reputation</li>
+                </ul>
+                <p class="text-neutral-500 text-xs mt-2">Violation may result in immediate termination without refund.</p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-xl font-medium text-white tracking-tight">4. Uptime & Service Level</h2>
+                <p>We target 99.9% monthly uptime for all paid services. If verified downtime exceeds this threshold, you're eligible for service credits equal to 5% of your monthly fee per additional 0.1% downtime.</p>
+                <p class="text-neutral-500 text-xs mt-1">Does not apply to: scheduled maintenance (notified 48h in advance), DDoS attacks, upstream provider outages, or force majeure.</p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-xl font-medium text-white tracking-tight">5. Limitation of Liability</h2>
+                <p>To the maximum extent permitted by Australian law:</p>
+                <ul class="list-disc list-inside space-y-1 ml-2">
+                    <li>Sake is not liable for loss of data, profits, or gameplay progress</li>
+                    <li>Our total liability is capped at the amount you paid in the previous 3 months</li>
+                    <li>We are not responsible for Minecraft account bans or Mojang policy changes</li>
+                </ul>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-xl font-medium text-white tracking-tight">6. Account Termination</h2>
+                <p>We reserve the right to suspend or terminate accounts for:</p>
+                <ul class="list-disc list-inside space-y-1 ml-2">
+                    <li>Non-payment (7-day grace period before deletion)</li>
+                    <li>Violation of these Terms</li>
+                    <li>Abuse of staff or other customers</li>
+                </ul>
+                <p class="mt-2">Upon termination, we provide a 7-day window to download your server files before permanent deletion.</p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-xl font-medium text-white tracking-tight">7. Changes to Terms</h2>
+                <p>We may update these Terms at any time. Continued use of the Service after changes constitutes acceptance. For material changes, we'll notify you via email or Discord 14 days in advance.</p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-xl font-medium text-white tracking-tight">8. Governing Law</h2>
+                <p>These Terms are governed by the laws of <span class="text-white">New South Wales, Australia</span>. Any disputes shall be resolved in the courts of Sydney, Australia.</p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-xl font-medium text-white tracking-tight">9. Contact</h2>
+                <p>For legal inquiries: <a href="https://discord.gg/Nr4NWMqtDb" class="text-[#0071e3] hover:underline">Discord (preferred)</a> or email coming soon.</p>
+            </section>
+
+            <div class="border-t border-white/[0.06] pt-6 mt-6 text-center text-neutral-600 text-xs">
+                <p>By using Sake services, you acknowledge that you have read, understood, and agree to these Terms of Service.</p>
+                <p class="mt-2">© 2026 Sake Digital — Built in Australia</p>
             </div>
-        </section>
-
-        <!-- The Architecture Grid -->
-        <section id="architecture" class="mt-12 space-y-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                
-                <!-- Premium Tier -->
-                <div class="bg-[#111112] border border-white/[0.04] rounded-3xl p-8 flex flex-col justify-between min-h-[240px]">
-                    <div class="space-y-2">
-                        <div class="text-[11px] font-medium tracking-widest text-neutral-500 uppercase">01 / Edition</div>
-                        <h3 class="text-lg font-medium text-white">Premium</h3>
-                        <p class="text-neutral-400 text-xs leading-relaxed">
-                            Engineered for high-demand multiplayer setups and heavy modpack infrastructure. Powered by industry-leading high-clock compute architecture.
-                        </p>
-                    </div>
-                    <div class="text-[13px] font-mono text-neutral-400 pt-6">
-                        $6.00 <span class="text-neutral-600">AUD / GB</span>
-                    </div>
-                </div>
-
-                <!-- Bare Metal Tier -->
-                <div class="bg-[#111112] border border-white/[0.04] rounded-3xl p-8 flex flex-col justify-between min-h-[240px]">
-                    <div class="space-y-2">
-                        <div class="text-[11px] font-medium tracking-widest text-neutral-500 uppercase">02 / Architecture</div>
-                        <h3 class="text-lg font-medium text-white">Isolated Metal</h3>
-                        <p class="text-neutral-400 text-xs leading-relaxed">
-                            Complete architectural independence. Your own private system with zero virtualization overhead and no neighboring resource drain.
-                        </p>
-                    </div>
-                    <div class="text-[13px] font-mono text-neutral-400 pt-6">
-                        Custom Provisioned
-                    </div>
-                </div>
-
-                <!-- Hand-Crafted Routing Feature -->
-                <div class="bg-[#111112] border border-white/[0.04] rounded-3xl p-8 flex flex-col justify-between min-h-[240px]">
-                    <div class="space-y-2">
-                        <div class="text-[11px] font-medium tracking-widest text-neutral-500 uppercase">03 / Network</div>
-                        <h3 class="text-lg font-medium text-white">Pure Pathways</h3>
-                        <p class="text-neutral-400 text-xs leading-relaxed">
-                            Latency isn’t managed—it’s engineered out. We hand-select premium low-hop transit lanes to ensure instantaneous client-to-server responses.
-                        </p>
-                    </div>
-                    <div class="text-[13px] font-mono text-emerald-500/80 pt-6 flex items-center gap-1.5">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Optimized Routing
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
+        </main>
     </div>
 
-    <!-- Final Verified Footer Element -->
-    <footer class="w-full border-t border-white/[0.04] py-8 bg-[#000000] mt-auto">
-        <div class="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[12px]">
-            <div class="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
-                <span class="text-neutral-600">© 2026 Sake Digital.</span>
-                <a href="https://discord.gg/Nr4NWMqtDb" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-white transition-colors duration-150">Discord Lounge</a>
-                <span class="text-neutral-700 select-none">·</span>
-                <a href="terms.html" class="text-neutral-400 hover:text-white transition-colors duration-150">Terms of Service</a>
+    <footer class="w-full bg-[#161617]/30 border-t border-white/[0.02] py-8 mt-auto">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-neutral-600">
+            <div class="flex gap-4">
+                <a href="/" class="hover:text-neutral-400">Home</a>
+                <a href="privacy.html" class="hover:text-neutral-400">Privacy</a>
             </div>
-            <div class="tracking-widest uppercase text-[10px] text-neutral-700 font-mono select-none">
+            <div class="font-mono tracking-wider text-neutral-700 uppercase text-[10px]">
                 Engineered in Australia
             </div>
         </div>
