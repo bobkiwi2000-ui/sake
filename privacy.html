@@ -2,185 +2,105 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy — Sake</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Privacy — Sake</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
+        * { box-sizing: border-box; }
         body { 
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
-            letter-spacing: -0.022em;
-            -webkit-font-smoothing: antialiased;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif; 
+            -webkit-font-smoothing: antialiased; 
+            background-color: #000000;
         }
     </style>
 </head>
-<body class="min-h-screen bg-[#000000] text-[#f5f5f7] flex flex-col selection:bg-neutral-800">
+<body class="text-[#f5f5f7]">
 
-    <nav class="w-full bg-[#161617]/40 backdrop-blur-md border-b border-white/[0.04] sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto px-6 h-12 flex items-center justify-between text-[12px] text-neutral-400">
-            <a href="/" class="font-semibold text-white tracking-[-0.03em] text-[15px] flex items-baseline select-none hover:opacity-80">
-                <span>sake</span><span class="text-neutral-500 font-normal">.host</span>
+    <!-- Navigation -->
+    <div class="sticky top-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-3xl mx-auto px-6 sm:px-8 h-12 sm:h-14 flex items-center justify-between text-sm">
+            <a href="/" class="font-semibold text-white tracking-tight">
+                sake<span class="text-white/40 font-normal">.host</span>
             </a>
-            <a href="/" class="hover:text-white transition-colors duration-200 text-[13px] tracking-tight">← Back</a>
+            <a href="/" class="text-white/60 hover:text-white transition-colors text-[13px]">← Home</a>
         </div>
-    </nav>
-
-    <div class="w-full max-w-3xl mx-auto px-6 flex-1 py-16 sm:py-24 space-y-10">
-        
-        <header class="space-y-3 border-b border-white/[0.06] pb-6">
-            <p class="text-[13px] font-medium text-[#0071e3] tracking-wide font-mono">Data Sovereignty</p>
-            <h1 class="text-4xl font-semibold tracking-[-0.03em] text-white">Privacy Policy</h1>
-            <p class="text-neutral-500 text-sm">Last updated: June 2026</p>
-        </header>
-
-        <main class="space-y-8 text-sm leading-relaxed text-neutral-400 font-normal">
-            
-            <!-- Jurisdiction Badges -->
-            <div class="flex flex-wrap gap-2 justify-center">
-                <span class="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 text-[10px] font-mono">🇦🇺 Australian Privacy Act</span>
-                <span class="px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-300 text-[10px] font-mono">🇸🇬 Singapore PDPA</span>
-            </div>
-
-            <div class="bg-blue-500/5 border border-blue-500/20 rounded-xl p-3 text-center">
-                <p class="text-blue-300 text-xs">🔒 We collect minimal data. Your server content is yours alone.</p>
-            </div>
-
-            <section class="space-y-3">
-                <h2 class="text-xl font-medium text-white tracking-tight">1. Information We Collect</h2>
-                <p>Sake Digital collects only what's necessary to provide Minecraft hosting:</p>
-                <ul class="list-disc list-inside space-y-1 ml-2">
-                    <li>Email address and Discord ID (for account access)</li>
-                    <li>Billing information (processed by Stripe/PayPal — we never see your full card details)</li>
-                    <li>Server IP addresses and usage logs (for security and debugging)</li>
-                </ul>
-                <p class="text-neutral-500 text-xs mt-1">We do <span class="text-white">NOT</span> collect or store your Minecraft account credentials, world files (unless you grant support access), or real-time player chat logs.</p>
-            </section>
-
-            <section class="space-y-3">
-                <h2 class="text-xl font-medium text-white tracking-tight">2. How We Use Your Data</h2>
-                <p>Your information is used exclusively for:</p>
-                <ul class="list-disc list-inside space-y-1 ml-2">
-                    <li>Provisioning and managing your server</li>
-                    <li>Billing and fraud prevention</li>
-                    <li>Responding to support requests</li>
-                    <li>Improving our infrastructure (anonymized analytics only)</li>
-                </ul>
-            </section>
-
-            <section class="space-y-3">
-                <h2 class="text-xl font-medium text-white tracking-tight">3. Third-Party Services</h2>
-                <p>We rely on trusted partners to deliver our service:</p>
-                <ul class="list-disc list-inside space-y-1 ml-2">
-                    <li><strong>Vultr / Oracle Cloud</strong> — Infrastructure providers (servers in Sydney, Singapore)</li>
-                    <li><strong>Stripe / PayPal</strong> — Payment processing (we never store card details)</li>
-                    <li><strong>Discord</strong> — Community and support</li>
-                </ul>
-                <p class="text-neutral-500 text-xs mt-1">Each partner has its own privacy policy. We recommend reviewing them.</p>
-            </section>
-
-            <section class="space-y-3">
-                <h2 class="text-xl font-medium text-white tracking-tight">4. Data Retention</h2>
-                <p>We keep your data while your account is active. After cancellation:</p>
-                <ul class="list-disc list-inside space-y-1 ml-2">
-                    <li>Server files: deleted after 7 days (you can download them first)</li>
-                    <li>Account information: anonymized within 30 days</li>
-                    <li>Billing records: retained for 5 years (Australian tax law)</li>
-                </ul>
-            </section>
-
-            <!-- Singapore PDPA Section (NEW) -->
-            <section class="space-y-3 bg-[#111112] p-5 rounded-xl border border-white/[0.05]">
-                <h2 class="text-xl font-medium text-white tracking-tight flex items-center gap-2">
-                    <span>🇸🇬</span> Singapore PDPA Compliance
-                </h2>
-                <p>For customers in Singapore, Sake Digital complies with the <strong>Personal Data Protection Act 2012 (PDPA)</strong>. Under the PDPA, you have the following rights:</p>
-                <ul class="list-disc list-inside space-y-1 ml-2">
-                    <li><strong>Access:</strong> Request a copy of your personal data we hold</li>
-                    <li><strong>Correction:</strong> Request correction of inaccurate or incomplete data</li>
-                    <li><strong>Withdrawal:</strong> Withdraw consent for data processing (may affect service delivery)</li>
-                    <li><strong>Deletion:</strong> Request deletion of your personal data (subject to legal retention requirements)</li>
-                </ul>
-                <p class="mt-2 text-neutral-300 text-xs">We do not use automated decision-making or profiling that significantly affects you.</p>
-                <div class="mt-3 pt-3 border-t border-white/[0.05] text-xs">
-                    <p class="text-neutral-400"><span class="text-white font-medium">Data Protection Officer (DPO):</span> Contact via Discord (preferred) or email dpo@sake.host (coming soon)</p>
-                    <p class="text-neutral-500 mt-1">Response time for PDPA requests: within 30 days.</p>
-                </div>
-            </section>
-
-            <!-- Spam Control Act (Singapore) -->
-            <section class="space-y-3">
-                <h2 class="text-xl font-medium text-white tracking-tight flex items-center gap-2">
-                    <span>📧</span> Spam Control Act (Singapore)
-                </h2>
-                <p>We comply with Singapore's Spam Control Act 2007. We will only send marketing emails to customers who have explicitly opted in. Every marketing email includes an unsubscribe link. We do not send bulk emails (>100 in 24 hours) or purchase email lists.</p>
-                <p class="text-neutral-500 text-xs">For questions about our email practices, contact our DPO.</p>
-            </section>
-
-            <section class="space-y-3">
-                <h2 class="text-xl font-medium text-white tracking-tight">5. Your Rights (Australian Privacy Act)</h2>
-                <p>Under the Australian Privacy Act 1988 (APP), you have the right to:</p>
-                <ul class="list-disc list-inside space-y-1 ml-2">
-                    <li>Access all personal data we hold about you</li>
-                    <li>Request correction of inaccurate data</li>
-                    <li>Request deletion of your data (except where required by law)</li>
-                    <li>Make a complaint about privacy handling</li>
-                </ul>
-                <p class="mt-2">To exercise these rights, contact us via Discord.</p>
-            </section>
-
-            <section class="space-y-3">
-                <h2 class="text-xl font-medium text-white tracking-tight">6. Security</h2>
-                <p>We use industry-standard encryption (TLS 1.3) for all data transmission. Our infrastructure partners maintain SOC2 compliance. However, no system is 100% secure — you use our service at your own risk.</p>
-            </section>
-
-            <section class="space-y-3">
-                <h2 class="text-xl font-medium text-white tracking-tight">7. International Data Transfers</h2>
-                <p>Your data may be stored on servers in:</p>
-                <ul class="list-disc list-inside space-y-1 ml-2">
-                    <li><strong>Australia</strong> — Sydney (protected by Australian Privacy Act)</li>
-                    <li><strong>Singapore</strong> — Singapore (protected by PDPA)</li>
-                </ul>
-                <p class="text-neutral-500 text-xs mt-1">Both jurisdictions provide adequate protection comparable to PDPA standards.</p>
-            </section>
-
-            <section class="space-y-3">
-                <h2 class="text-xl font-medium text-white tracking-tight">8. Changes to This Policy</h2>
-                <p>We'll notify you of material changes via email or Discord at least 14 days in advance. Continued use after changes constitutes acceptance.</p>
-            </section>
-
-            <section class="space-y-3">
-                <h2 class="text-xl font-medium text-white tracking-tight">9. Contact & Complaints</h2>
-                <p><strong>Data Protection Officer (DPO):</strong></p>
-                <ul class="list-disc list-inside space-y-1 ml-2">
-                    <li>Discord: <a href="https://discord.gg/Nr4NWMqtDb" class="text-[#0071e3] hover:underline">Join our Discord and DM @dpo</a></li>
-                    <li>Email: dpo@sake.host (coming soon)</li>
-                </ul>
-                <p class="mt-2"><strong>Complaints:</strong></p>
-                <ul class="list-disc list-inside space-y-1 ml-2">
-                    <li>🇦🇺 Australia: <a href="https://www.oaic.gov.au" class="text-[#0071e3] hover:underline">Office of the Australian Information Commissioner</a></li>
-                    <li>🇸🇬 Singapore: <a href="https://www.pdpc.gov.sg" class="text-[#0071e3] hover:underline">Personal Data Protection Commission</a></li>
-                </ul>
-            </section>
-
-            <div class="border-t border-white/[0.06] pt-6 mt-6 text-center text-neutral-600 text-xs">
-                <p>© 2026 Sake Digital — <span class="text-white">Australia & Singapore</span></p>
-                <p class="mt-1">Last reviewed: June 2026</p>
-            </div>
-        </main>
     </div>
 
-    <footer class="w-full bg-[#161617]/30 border-t border-white/[0.02] py-8 mt-auto">
-        <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-neutral-600">
-            <div class="flex gap-4">
-                <a href="/" class="hover:text-neutral-400">Home</a>
-                <a href="terms.html" class="hover:text-neutral-400">Terms</a>
+    <main class="max-w-3xl mx-auto px-6 sm:px-8 py-16 sm:py-24">
+        
+        <div class="border-b border-white/5 pb-8 mb-10">
+            <p class="text-white/40 text-[13px] font-mono mb-2">Data Sovereignty</p>
+            <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight">Privacy Policy</h1>
+            <p class="text-white/40 text-sm mt-3">Last updated: June 2026</p>
+        </div>
+
+        <div class="space-y-10 text-white/50 text-[15px] leading-relaxed">
+            
+            <div class="bg-white/5 rounded-xl p-5 text-center text-white/60 text-sm">
+                We collect minimal data. Your server content is yours alone.
             </div>
-            <div class="font-mono tracking-wider text-neutral-700 uppercase text-[10px]">
-                🇦🇺 Engineered in Australia 🇸🇬
+
+            <section>
+                <h2 class="text-xl font-medium text-white mb-3 tracking-tight">1. Information We Collect</h2>
+                <p>Email address, Discord ID, billing information (processed by Stripe/PayPal — we never see full card details), and server IP addresses for security.</p>
+                <p class="mt-2 text-white/40 text-xs">We do NOT collect Minecraft account credentials, world files (unless you grant access), or player chat logs.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-medium text-white mb-3 tracking-tight">2. How We Use Your Data</h2>
+                <p>Provisioning servers, billing, fraud prevention, support, and anonymized infrastructure improvements.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-medium text-white mb-3 tracking-tight">3. Third‑Party Services</h2>
+                <p>We use Vultr/Oracle Cloud (Sydney, Singapore), Stripe/PayPal (payments), and Discord (support). Each has its own privacy policy.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-medium text-white mb-3 tracking-tight">4. Data Retention</h2>
+                <p>Server files: deleted 7 days after cancellation. Account info: anonymized within 30 days. Billing records: retained 5 years (tax law).</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-medium text-white mb-3 tracking-tight">5. Your Rights</h2>
+                <p>Under Australian and Singapore privacy laws, you may request access, correction, or deletion of your data. Contact our Data Protection Officer via Discord.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-medium text-white mb-3 tracking-tight">6. Security</h2>
+                <p>We use TLS 1.3 encryption. Our infrastructure partners are SOC2 compliant. No system is 100% secure.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-medium text-white mb-3 tracking-tight">7. Contact</h2>
+                <p>Data Protection Officer: Discord (preferred) or dpo@sake.host (coming soon)<br>Complaints: <a href="https://www.oaic.gov.au" class="text-white/60 hover:text-white transition">OAIC (Australia)</a> or <a href="https://www.pdpc.gov.sg" class="text-white/60 hover:text-white transition">PDPC (Singapore)</a></p>
+            </section>
+
+            <div class="border-t border-white/5 pt-8 mt-8 text-center text-white/40 text-xs">
+                © 2026 Sake Digital — Australia & Singapore
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="border-t border-white/5 py-8 text-white/40 text-xs">
+        <div class="max-w-3xl mx-auto px-6 sm:px-8 flex flex-col sm:flex-row justify-between items-center gap-3">
+            <div class="flex gap-4">
+                <span>© 2026 Sake Digital</span>
+                <span class="text-white/20">|</span>
+                <a href="terms.html" class="hover:text-white/70 transition">Terms</a>
+                <span class="text-white/20">|</span>
+                <a href="privacy.html" class="hover:text-white/70 transition">Privacy</a>
+            </div>
+            <div class="font-mono tracking-wider text-white/30 text-[10px]">
+                Australia • Singapore
             </div>
         </div>
     </footer>
+
 </body>
 </html>

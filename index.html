@@ -3,198 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Sake — Premium Minecraft Server Hosting</title>
+    <title>Sake — Premium Minecraft Hosting</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        *, *::before, *::after { box-sizing: border-box; }
+        * { box-sizing: border-box; }
         body { 
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif; 
             -webkit-font-smoothing: antialiased; 
+            -moz-osx-font-smoothing: grayscale;
             background-color: #000000;
         }
-        h1, h2, h3 { letter-spacing: -0.04em; }
-        p, span, a, li { letter-spacing: -0.011em; }
         
-        @keyframes appleFadeUp { 
-            from { opacity: 0; transform: translateY(20px); } 
-            to { opacity: 1; transform: translateY(0); } 
+        @keyframes fade-up {
+            0% { opacity: 0; transform: translateY(24px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
-        .animate-fade-up { 
-            opacity: 0; 
-            animation: appleFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
+        
+        .fade-up {
+            animation: fade-up 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
         }
-        .delay-1 { animation-delay: 100ms; }
-        .delay-2 { animation-delay: 250ms; }
-        .delay-3 { animation-delay: 400ms; }
+        
+        .delay-100 { animation-delay: 0.1s; opacity: 0; }
+        .delay-200 { animation-delay: 0.2s; opacity: 0; }
+        .delay-300 { animation-delay: 0.3s; opacity: 0; }
+        .delay-400 { animation-delay: 0.4s; opacity: 0; }
+        
+        .hover-lift {
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-2px);
+        }
     </style>
 </head>
-<body class="min-h-screen w-full text-[#f5f5f7] flex flex-col justify-between overflow-x-hidden selection:bg-blue-600 selection:text-white">
+<body class="min-h-screen text-[#f5f5f7]">
 
-    <!-- Premium Minimal Navigation -->
-    <nav class="w-full bg-[#000000]/70 backdrop-blur-md border-b border-white/[0.04] sticky top-0 z-50">
-        <div class="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
-            <div class="font-semibold text-white tracking-[-0.05em] text-[16px] flex items-baseline select-none">
-                <span>sake</span><span class="text-neutral-500 font-light">.host</span>
+    <!-- Navigation — Apple style -->
+    <div class="sticky top-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-5xl mx-auto px-6 sm:px-8 h-12 sm:h-14 flex items-center justify-between text-sm">
+            <div class="font-semibold text-white tracking-tight">
+                sake<span class="text-white/40 font-normal">.host</span>
             </div>
-            <div class="flex items-center gap-6">
-                <a href="#philosophy" class="text-[12px] text-neutral-400 hover:text-white transition-colors duration-200">Philosophy</a>
-                <a href="#architecture" class="text-[12px] text-neutral-400 hover:text-white transition-colors duration-200">Infrastructure</a>
-                <a href="https://discord.gg/Nr4NWMqtDb" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-3 py-1 bg-white text-black text-[12px] font-medium rounded-full hover:bg-neutral-200 transition-colors duration-150">Join Beta</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main Hero Container -->
-    <div class="w-full max-w-4xl mx-auto px-6 flex-1 flex flex-col pt-20 pb-32">
-        
-        <!-- Pre-launch Badge -->
-        <div class="text-center mb-8 animate-fade-up delay-1">
-            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 text-[11px] font-mono">
-                <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
-                PRE-LAUNCH • FREE BETA SOON
-            </span>
-        </div>
-
-        <!-- Hero Section -->
-        <header class="text-center space-y-6 max-w-2xl mx-auto mb-20">
-            <h1 class="animate-fade-up delay-1 text-[44px] sm:text-[64px] font-semibold tracking-[-0.045em] leading-[1.08] text-white">
-                Minecraft.<br />Uncompromised.
-            </h1>
-            <p class="animate-fade-up delay-2 text-neutral-400 text-base sm:text-[19px] font-normal leading-relaxed max-w-lg mx-auto">
-                Premium Minecraft server hosting for Asia-Pacific. No overcrowding. No hidden throttling. Just pure performance.
-            </p>
-            <div class="animate-fade-up delay-3 pt-4 flex flex-col sm:flex-row gap-3 justify-center">
-                <a href="https://discord.gg/Nr4NWMqtDb" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-2.5 bg-[#0071e3] text-white text-[14px] font-medium rounded-full hover:bg-[#147ce5] transition-all duration-150">
-                    Join Beta Waitlist →
-                </a>
-                <a href="#architecture" class="inline-flex items-center justify-center px-6 py-2.5 bg-white/5 border border-white/10 text-white text-[14px] font-medium rounded-full hover:bg-white/10 transition-all duration-150">
-                    View Specs
+            <div class="flex items-center gap-6 text-white/70 text-[13px]">
+                <a href="#philosophy" class="hover:text-white transition-colors hidden sm:inline">Philosophy</a>
+                <a href="#infrastructure" class="hover:text-white transition-colors hidden sm:inline">Infrastructure</a>
+                <a href="https://discord.gg/Nr4NWMqtDb" target="_blank" class="px-4 py-1.5 bg-white/10 hover:bg-white/20 rounded-full text-white transition-all text-[13px] font-medium backdrop-blur-sm">
+                    Beta → Discord
                 </a>
             </div>
-            <p class="text-neutral-600 text-xs mt-4">
-                🎯 First 50 members get <span class="text-emerald-400">50% off forever</span> at launch
-            </p>
-        </header>
-
-        <!-- Honest Disclaimer Box -->
-        <div class="mb-16 bg-yellow-500/5 border border-yellow-500/20 rounded-2xl p-4 max-w-xl mx-auto text-center">
-            <p class="text-yellow-400 text-xs font-mono mb-1">⚡ TRANSPARENCY NOTE</p>
-            <p class="text-neutral-400 text-xs">
-                Sake is currently in pre-launch. We're a small team (literally one person) building 
-                premium Minecraft hosting for Australia & Asia. Join our Discord to follow development 
-                and claim beta access.
-            </p>
         </div>
-
-        <!-- Product Philosophy -->
-        <section id="philosophy" class="grid grid-cols-1 md:grid-cols-2 gap-12 py-16 border-t border-white/[0.06]">
-            <div class="space-y-3">
-                <h2 class="text-xs font-semibold uppercase tracking-widest text-neutral-500">The Sake Philosophy</h2>
-                <p class="text-xl sm:text-2xl font-medium text-white tracking-tight leading-snug">
-                    We don't crowd servers.<br />We dedicate resources.
-                </p>
-            </div>
-            <div class="text-neutral-400 text-sm sm:text-[15px] leading-relaxed space-y-4">
-                <p>
-                    Most budget hosts pack 50+ Minecraft servers onto a single machine. The result? 
-                    Lag spikes, tick rate drops, and frustrated players.
-                </p>
-                <p>
-                    Sake takes the opposite approach. We deploy on high-frequency compute instances 
-                    with dedicated CPU cores and low-latency networking. Your world runs exactly as 
-                    Mojang intended — smooth, stable, and fast.
-                </p>
-                <p class="text-emerald-400/70 text-xs pt-2">
-                    → Built for: Paper, Purpur, Forge, Fabric, Vanilla, and modpacks
-                </p>
-            </div>
-        </section>
-
-        <!-- Infrastructure Grid (Honest about using providers) -->
-        <section id="architecture" class="mt-8 space-y-4">
-            <h2 class="text-center text-xs font-semibold uppercase tracking-widest text-neutral-500 mb-6">Infrastructure Stack</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                
-                <!-- Compute Tier -->
-                <div class="bg-[#111112] border border-white/[0.04] rounded-3xl p-8 flex flex-col justify-between min-h-[260px]">
-                    <div class="space-y-2">
-                        <div class="text-[11px] font-medium tracking-widest text-neutral-500 uppercase">01 / Compute</div>
-                        <h3 class="text-lg font-medium text-white">High-Frequency CPU</h3>
-                        <p class="text-neutral-400 text-xs leading-relaxed">
-                            AMD EPYC / Intel Platinum architecture with dedicated vCPU allocation. 
-                            5.2GHz+ boost clocks optimized for Minecraft's single-thread performance.
-                        </p>
-                    </div>
-                    <div class="text-[13px] font-mono text-neutral-400 pt-6">
-                        From $6.00 <span class="text-neutral-600">AUD / GB</span>
-                    </div>
-                </div>
-
-                <!-- Locations (Asia-Pacific focus) -->
-                <div class="bg-[#111112] border border-white/[0.04] rounded-3xl p-8 flex flex-col justify-between min-h-[260px]">
-                    <div class="space-y-2">
-                        <div class="text-[11px] font-medium tracking-widest text-neutral-500 uppercase">02 / Locations</div>
-                        <h3 class="text-lg font-medium text-white">Asia-Pacific First</h3>
-                        <p class="text-neutral-400 text-xs leading-relaxed">
-                            🇦🇺 Sydney, Australia &nbsp;|&nbsp; 🇸🇬 Singapore<br>
-                            🇺🇸 North America (2027) &nbsp;|&nbsp; 🇪🇺 Europe (2027)
-                        </p>
-                    </div>
-                    <div class="text-[13px] font-mono text-emerald-500/80 pt-6 flex items-center gap-1.5">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Low-Latency Routing
-                    </div>
-                </div>
-
-                <!-- Control Panel -->
-                <div class="bg-[#111112] border border-white/[0.04] rounded-3xl p-8 flex flex-col justify-between min-h-[260px]">
-                    <div class="space-y-2">
-                        <div class="text-[11px] font-medium tracking-widest text-neutral-500 uppercase">03 / Control</div>
-                        <h3 class="text-lg font-medium text-white">Pterodactyl Panel</h3>
-                        <p class="text-neutral-400 text-xs leading-relaxed">
-                            Industry-standard game server management. One-click modpack installs, 
-                            scheduled tasks, file editor, and full console access.
-                        </p>
-                    </div>
-                    <div class="text-[13px] font-mono text-neutral-400 pt-6">
-                        DDoS Protection Included
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Beta Signup CTA -->
-        <section class="mt-20 text-center py-12 border-t border-white/[0.06]">
-            <h3 class="text-xl font-medium text-white mb-2">Ready to experience the difference?</h3>
-            <p class="text-neutral-500 text-sm mb-6">Join the waitlist. Beta access is free.</p>
-            <a href="https://discord.gg/Nr4NWMqtDb" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-3 bg-white text-black text-[14px] font-medium rounded-full hover:bg-neutral-200 transition-all duration-150">
-                Join Discord → Join Beta
-            </a>
-            <p class="text-neutral-600 text-[11px] mt-4">
-                No payment required for beta. First 50 members lock in 50% off permanent pricing.
-            </p>
-        </section>
-
     </div>
 
-    <!-- Footer -->
-    <footer class="w-full border-t border-white/[0.04] py-8 bg-[#000000]">
-        <div class="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[12px]">
-            <div class="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
-                <span class="text-neutral-600">© 2026 Sake Digital</span>
-                <a href="https://discord.gg/Nr4NWMqtDb" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-white transition-colors">Discord</a>
-                <span class="text-neutral-700">·</span>
-                <a href="terms.html" class="text-neutral-400 hover:text-white transition-colors">Terms</a>
-                <span class="text-neutral-700">·</span>
-                <a href="privacy.html" class="text-neutral-400 hover:text-white transition-colors">Privacy</a>
+    <main class="max-w-5xl mx-auto px-6 sm:px-8 pt-16 sm:pt-24 pb-32">
+        
+        <!-- Hero -->
+        <div class="text-center max-w-2xl mx-auto mb-28">
+            <div class="fade-up delay-100 inline-block mb-6">
+                <span class="text-white/40 text-[13px] tracking-wide font-mono">MINECRAFT HOSTING</span>
             </div>
-            <div class="tracking-widest uppercase text-[10px] text-neutral-700 font-mono">
-                Engineered in Australia
+            <h1 class="fade-up delay-200 text-5xl sm:text-7xl font-semibold tracking-tight leading-[1.08] mb-5">
+                Performance.<br />Uncompromised.
+            </h1>
+            <p class="fade-up delay-300 text-white/50 text-lg sm:text-xl leading-relaxed max-w-lg mx-auto">
+                Premium Minecraft servers for Asia-Pacific. No overcrowding. Just pure, dedicated performance.
+            </p>
+            <div class="fade-up delay-400 flex flex-col sm:flex-row gap-3 justify-center mt-8">
+                <a href="https://discord.gg/Nr4NWMqtDb" target="_blank" class="px-6 py-2.5 bg-[#0071e3] hover:bg-[#0077ed] text-white text-[15px] font-medium rounded-full transition-all">
+                    Join the Beta
+                </a>
+                <a href="#infrastructure" class="px-6 py-2.5 bg-white/5 hover:bg-white/10 text-white/90 text-[15px] font-medium rounded-full transition-all backdrop-blur-sm">
+                    View specs →
+                </a>
+            </div>
+            <p class="text-white/30 text-xs mt-6 tracking-tight">
+                First 50 members • 50% off forever
+            </p>
+        </div>
+
+        <!-- Philosophy -->
+        <section id="philosophy" class="grid md:grid-cols-2 gap-12 md:gap-20 py-16 border-t border-white/5">
+            <div>
+                <h2 class="text-white/40 text-xs font-semibold uppercase tracking-wider mb-3">The Sake Philosophy</h2>
+                <p class="text-2xl sm:text-3xl font-medium tracking-tight leading-tight text-white">
+                    We don't crowd servers.<br />We dedicate them.
+                </p>
+            </div>
+            <div class="text-white/50 text-[15px] leading-relaxed space-y-4">
+                <p>
+                    Most hosts pack 50+ Minecraft servers onto a single machine. The result? Lag spikes, tick rate drops, and frustrated players.
+                </p>
+                <p>
+                    Sake takes the opposite approach — high-frequency compute, dedicated resources, and low-latency networking for Australia & Singapore. Your world runs exactly as intended.
+                </p>
+                <p class="text-white/30 text-sm pt-2">
+                    Paper • Purpur • Forge • Fabric • Vanilla • Modpacks
+                </p>
+            </div>
+        </section>
+
+        <!-- Infrastructure Grid — Apple style (clean, 3 columns) -->
+        <section id="infrastructure" class="py-16 border-t border-white/5">
+            <div class="text-center mb-12">
+                <h2 class="text-white/40 text-xs font-semibold uppercase tracking-wider">Infrastructure</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-4">
+                
+                <div class="bg-white/5 hover:bg-white/10 rounded-2xl p-7 transition-all hover-lift">
+                    <div class="text-white/30 text-[11px] font-mono mb-3">01</div>
+                    <h3 class="text-lg font-medium text-white mb-2">Compute</h3>
+                    <p class="text-white/40 text-sm leading-relaxed">
+                        High-frequency EPYC architecture. Dedicated cores. 5.2GHz+ boost for Minecraft's single-thread demands.
+                    </p>
+                    <div class="mt-5 text-white/50 text-xs font-mono">
+                        from $6 AUD / GB
+                    </div>
+                </div>
+
+                <div class="bg-white/5 hover:bg-white/10 rounded-2xl p-7 transition-all hover-lift">
+                    <div class="text-white/30 text-[11px] font-mono mb-3">02</div>
+                    <h3 class="text-lg font-medium text-white mb-2">Locations</h3>
+                    <p class="text-white/40 text-sm leading-relaxed">
+                        🇦🇺 Sydney<br>🇸🇬 Singapore
+                    </p>
+                    <div class="mt-5 text-white/40 text-xs font-mono">
+                        Asia-Pacific first
+                    </div>
+                </div>
+
+                <div class="bg-white/5 hover:bg-white/10 rounded-2xl p-7 transition-all hover-lift">
+                    <div class="text-white/30 text-[11px] font-mono mb-3">03</div>
+                    <h3 class="text-lg font-medium text-white mb-2">Control</h3>
+                    <p class="text-white/40 text-sm leading-relaxed">
+                        Pterodactyl panel. One-click modpacks. File editor. Console access. DDoS protection included.
+                    </p>
+                    <div class="mt-5 text-white/40 text-xs font-mono">
+                        Enterprise stack
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Beta CTA -->
+        <div class="text-center py-20 border-t border-white/5">
+            <h3 class="text-2xl font-medium text-white mb-2">Ready for uncompromised performance?</h3>
+            <p class="text-white/40 mb-6">Join the waitlist. Beta access is free.</p>
+            <a href="https://discord.gg/Nr4NWMqtDb" target="_blank" class="inline-block px-8 py-3 bg-white/10 hover:bg-white/20 text-white text-[15px] font-medium rounded-full transition-all backdrop-blur-sm">
+                Join Discord → Reserve your spot
+            </a>
+            <p class="text-white/30 text-xs mt-5">
+                No payment required for beta. 50% off locked in for early members.
+            </p>
+        </div>
+
+    </main>
+
+    <!-- Footer — Minimal Apple style -->
+    <footer class="border-t border-white/5 py-8 text-white/40 text-xs">
+        <div class="max-w-5xl mx-auto px-6 sm:px-8 flex flex-col sm:flex-row justify-between items-center gap-3">
+            <div class="flex gap-4">
+                <span>© 2026 Sake Digital</span>
+                <span class="text-white/20">|</span>
+                <a href="terms.html" class="hover:text-white/70 transition">Terms</a>
+                <span class="text-white/20">|</span>
+                <a href="privacy.html" class="hover:text-white/70 transition">Privacy</a>
+            </div>
+            <div class="font-mono tracking-wider text-white/30 text-[10px]">
+                Australia • Singapore
             </div>
         </div>
     </footer>
+
 </body>
 </html>
